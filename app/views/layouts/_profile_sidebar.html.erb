@@ -1,0 +1,29 @@
+<div class="profile-sidebar">
+  <div class="profile-userpicture">
+    <%= image_tag("userpicture.png", alt: t("user_picture"),
+      class: "img-responsive") %>
+  </div>
+  <div class="profile-usertitle">
+    <div class="profile-usertitle-name"></div>
+    <div class="profile-usertitle-job"></div>
+  </div>
+  <div class="profile-usermenu">
+    <ul class="nav">
+      <li class="active">
+        <a href=""><i class="glyphicon glyphicon-home"></i> <%= t ".overview" %></a>
+      </li>
+      <li>
+        <a href=""><i class="fa fa-list-alt"></i> <%= t ".courses" %></a>
+      </li>
+      <li>
+        <a href=""><i class="fa fa-address-book"></i> <%= t ".subjects" %></a>
+      </li>
+      <li>
+        <a href=""><i class="glyphicon glyphicon-ok"></i> <%= t ".tasks" %></a>
+      </li>
+      <li>
+        <a href=""><i class="glyphicon glyphicon-user"></i> <%= t ".users" %></a>
+      </li>
+    </ul>
+  </div>
+</div>

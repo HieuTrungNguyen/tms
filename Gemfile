@@ -12,6 +12,11 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "rubocop", "~> 0.79.0", require: false
 
+gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
+gem "jquery-rails"
+gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
+
 gem "bootsnap", ">= 1.4.2", require: false
 
 group :development, :test do
