@@ -11,6 +11,9 @@ gem "webpacker", "~> 4.0"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "rubocop", "~> 0.79.0", require: false
+gem "bcrypt", "~> 3.1.11"
+
+gem "config"
 
 gem "bootsnap", ">= 1.4.2", require: false
 
