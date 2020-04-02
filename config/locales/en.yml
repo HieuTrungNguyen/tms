@@ -15,3 +15,27 @@ en:
       users: "Users"
     application:
       copyright: "Copyright by HTN"
+  sessions:
+    new:
+      title_login: "Welcome to Training System"
+      remember_me: "Remember me on this device?"
+      login: "Log in"
+    create:
+      invalid: "Invalid email/password combination. Try again!"
+
+  users:
+    user_form:
+      signup_title: "Sign Up for the Free Training App"
+      full_name: "Full Name"
+      email: "Email"
+      password: "Password"
+      pass_confirmation: "Password Confirmation"
+      phone_number: "Phone Number"
+      address: "Address"
+      btn_signup: "Create Account"
+    new:
+      already_have_acc: "Already have an account?"
+      login: "Log in here"
+    create:
+      created_success: "Create account successfully!"
+      created_fail: "Sign up failed. Try again!"

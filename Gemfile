@@ -11,6 +11,9 @@ gem "webpacker", "~> 4.0"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "rubocop", "~> 0.79.0", require: false
+gem "bcrypt", "~> 3.1.11"
+
+gem "config"
 
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
