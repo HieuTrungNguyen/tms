@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_091850) do
+ActiveRecord::Schema.define(version: 2020_04_10_012136) do
 
   create_table "course_subjects", force: :cascade do |t|
     t.string "status"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_091850) do
     t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
   end
 
   add_foreign_key "course_subjects", "courses"
