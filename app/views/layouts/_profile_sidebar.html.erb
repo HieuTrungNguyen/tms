@@ -1,15 +1,10 @@
 <div class="profile-sidebar">
   <div class="profile-userpicture">
-  <%= image_tag(set_avatar(current_user), alt: t("user_picture"),
-    class: "img-responsive") %>
+    <%= image_tag("userpicture.png", alt: t("user_picture"),
+      class: "img-responsive") %>
   </div>
   <div class="profile-usertitle">
-    <div class="profile-usertitle-name">
-    <% if logged_in? %>
-      <%= link_to current_user.name, show_profile_user_path(current_user),
-        data: {toggle: "modal"}, remote: true %>
-    <% end %>
-    </div>
+    <div class="profile-usertitle-name"></div>
     <div class="profile-usertitle-job"></div>
   </div>
   <div class="profile-usermenu">
