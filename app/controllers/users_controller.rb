@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i(new create)
-  before_action :authenticate_supervisor!, only: :index
+  before_action :authenticate_supervisor!, only: %i(index destroy)
   before_action :load_user, except: %i(new create index)
+  before_action :correct_user, only: %i(show edit update)
 
   def new
     @user = User.new
@@ -19,6 +20,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.page(params[:page]).per Settings.user.default_per_page
+  end
+
   def show_profile
     @user = User.find_by id: params[:id]
     respond_to do |format|
@@ -27,6 +32,26 @@ class UsersController < ApplicationController
   end
 
   def show; end
+
+  def edit; end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t ".update_success"
+    else
+      flash[:danger] = t "try_again"
+    end
+    redirect_to @user
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".delete_success"
+    else
+      flash[:danger] = t "try_again"
+    end
+    redirect_to users_path
+  end
 
   private
   def user_params
@@ -37,5 +62,9 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     render_404 unless @user
+  end
+
+  def correct_user
+    redirect_to root_path unless current_user.is_supervisor? || current_user?(@user)
   end
 end

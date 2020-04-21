@@ -13,7 +13,10 @@ gem "jbuilder", "~> 2.7"
 gem "rubocop", "~> 0.79.0", require: false
 gem "bcrypt", "~> 3.1.11"
 
+gem "faker"
 gem "config"
+gem "kaminari", "~> 1.2"
+gem "bootstrap-kaminari-views"
 
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"

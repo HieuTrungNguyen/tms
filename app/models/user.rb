@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   before_save {email.downcase!}
 
+  enum roles: {trainee: 0, supervisor: 1}
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
 
@@ -22,7 +24,7 @@ class User < ApplicationRecord
   validates :address, presence: true, length: {maximum: Settings.user.max_text_length}
 
   def is_supervisor?
-    role == Setting.user.supervisor
+    role == Settings.user.supervisor
   end
 
   class << self

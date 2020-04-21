@@ -1,36 +1,36 @@
 <%= form_for @user do |f| %>
-  <div id="titleContainer"><%= t ".signup_title" %></div>
+  <div id="titleContainer"><%= yield :title_user %></div>
   <div id="rainbow"></div>
 
   <%= render "shared/error_messages", object: f.object %>
 
   <div class="form-group">
     <%= f.text_field :name, class: "nameInput registerInput form-control",
-      placeholder: t(".full_name") %>
+      placeholder: t("form.full_name") %>
   </div>
   <div class="form-group">
     <%= f.email_field :email, class: "emailInput registerInput form-control",
-      placeholder: t(".email") %>
+      placeholder: t("form.email") %>
   </div>
   <div class="form-group">
     <%= f.password_field :password, class: "passwordInput registerInput form-control",
-      placeholder: t(".password") %>
+      placeholder: t("form.password") %>
   </div>
   <div class="form-group">
     <%= f.password_field :password_confirmation,
       class: "passwordConfirmationInput registerInput form-control",
-      placeholder: t(".pass_confirmation") %>
+      placeholder: t("form.pass_confirmation") %>
   </div>
   <div class="form-group">
     <%= f.text_field :phone_number, class: "phoneInput registerInput form-control",
-      placeholder: t(".phone_number") %>
+      placeholder: t("form.phone_number") %>
   </div>
   <div class="form-group">
     <%= f.text_field :address, class: "addressInput registerInput form-control",
-      placeholder: t(".address") %>
+      placeholder: t("form.address") %>
   </div>
   <div class="signupButton form-group">
-    <%= f.submit t(".btn_signup"), class: "btn btn-primary" %>
+    <%= f.submit yield(:btn_text), class: "btn btn-primary" %>
   </div>
 
   <div id="rainbow"></div>
