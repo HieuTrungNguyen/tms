@@ -1,4 +1,4 @@
-#containerFrontPage {
+.containerFrontPage {
   margin          : 0 auto;
   width           : 404px;
   background-color: #fff;
@@ -87,4 +87,28 @@
 .list-errors li{
   color  : red;
   padding: 3px 0px;
+}
+.modal-title {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Index Users */
+.users-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.users-avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.th-user, .td-user {
+  text-align: center;
+}
+.td-user {
+  line-height: 50px !important;
+}
+.user-text-trans {
+  text-transform: capitalize;
 }

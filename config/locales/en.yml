@@ -1,4 +1,20 @@
 en:
+  login_first: "You must log in first!"
+  role: "Permission role!"
+  try_again: "This action's failed. Try again!"
+  sure?: "You sure?"
+
+  form:
+    full_name: "Full Name"
+    email: "Email"
+    password: "Password"
+    pass_confirmation: "Password Confirmation"
+    phone_number: "Phone Number"
+    address: "Address"
+    login: "Log in"
+    role: "Role"
+    action: "Action"
+
   layouts:
     header:
       logo: "Training System"
@@ -6,6 +22,8 @@ en:
       profile: "Profile"
       settings: "Settings"
       logout: "Log out"
+      help: "Help"
+      users: "Users"
     profile_sidebar:
       user_picture: "User Picture"
       overview: "Overview"
@@ -15,27 +33,43 @@ en:
       users: "Users"
     application:
       copyright: "Copyright by HTN"
+
+  profiles:
+    show_user_profile:
+      user_title: "My Profile"
+      joined: "Joined: %{time}"
+      role: "Role"
+      show: "Show"
+      close: "Close"
+      edit_profile: "Edit Profile"
+
   sessions:
     new:
       title_login: "Welcome to Training System"
       remember_me: "Remember me on this device?"
-      login: "Log in"
+      new_user: "New user?"
+      signup_now: "Sign up now!"
     create:
       invalid: "Invalid email/password combination. Try again!"
 
   users:
-    user_form:
-      signup_title: "Sign Up for the Free Training App"
-      full_name: "Full Name"
-      email: "Email"
-      password: "Password"
-      pass_confirmation: "Password Confirmation"
-      phone_number: "Phone Number"
-      address: "Address"
-      btn_signup: "Create Account"
+    user:
+      show: "Show"
+      delete: "Delete"
     new:
+      signup_title: "Sign Up for the Free Training App"
       already_have_acc: "Already have an account?"
       login: "Log in here"
+      btn_signup: "Create Account"
     create:
       created_success: "Create account successfully!"
       created_fail: "Sign up failed. Try again!"
+    index:
+      index_title: "Users"
+    edit:
+      save: "Save changes"
+      edit_title: "Edit Your Profile"
+    update:
+      update_success: "Updated profile successfully!"
+    destroy:
+      delete_success: "You're deleted this user successfully."

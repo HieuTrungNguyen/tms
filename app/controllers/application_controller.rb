@@ -8,13 +8,13 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     return if logged_in?
-    flash[:danger] = "You must log in first!"
+    flash[:danger] = t "login_first"
     redirect_to login_path
   end
 
   def authenticate_supervisor!
     return if current_user.is_supervisor?
-    flash[:danger] = "Permission role!"
+    flash[:danger] = t "role"
     redirect_to root_path
   end
 end
