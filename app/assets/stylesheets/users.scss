@@ -18,7 +18,7 @@
 }
 #rainbow, #rainbowForForgot {
   width            : 364px;
-  margin: 0 auto;
+  margin           : 0 auto;
   height           : 1px;
   background-repeat: repeat-x;
   background-image : url(color.png);
@@ -58,7 +58,9 @@
 .signupButton, .loginButton {
   margin    : 20px;
   text-align: center;
-  input[type="submit"] {
+  .btn-form {
+    width      : 360px !important;
+    margin-left: -20px;
     font-size  : 16px;
     font-weight: 600;
     &:hover {
@@ -89,18 +91,18 @@
   padding: 3px 0px;
 }
 .modal-title {
-  text-align: center;
+  text-align : center;
   font-weight: 600;
 }
 
 /* Index Users */
 .users-title {
-  text-align: center;
+  text-align   : center;
   margin-bottom: 30px;
 }
 .users-avatar {
-  height: 50px;
-  width: 50px;
+  height       : 50px;
+  width        : 50px;
   border-radius: 50%;
 }
 .th-user, .td-user {

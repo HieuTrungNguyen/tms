@@ -15,19 +15,24 @@
   <div class="profile-usermenu">
     <ul class="nav">
       <li class="active">
-        <a href=""><i class="glyphicon glyphicon-home"></i> <%= t ".overview" %></a>
+        <%= link_to t(".overview", icon:
+          content_tag(:i, "", class: "glyphicon glyphicon-home")).html_safe, "#" %>
       </li>
       <li>
-        <a href=""><i class="fa fa-list-alt"></i> <%= t ".courses" %></a>
+        <%= link_to t(".courses", icon:
+          content_tag(:i, "", class: "fa fa-list-alt")).html_safe, courses_path %>
       </li>
       <li>
-        <a href=""><i class="fa fa-address-book"></i> <%= t ".subjects" %></a>
+        <%= link_to t(".subjects", icon:
+          content_tag(:i, "", class: "fa fa-address-book")).html_safe, "#" %>
       </li>
       <li>
-        <a href=""><i class="glyphicon glyphicon-ok"></i> <%= t ".tasks" %></a>
+        <%= link_to t(".tasks", icon:
+          content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
       </li>
       <li>
-        <a href=""><i class="glyphicon glyphicon-user"></i> <%= t ".users" %></a>
+        <%= link_to t(".users", icon:
+          content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, "#" %>
       </li>
     </ul>
   </div>

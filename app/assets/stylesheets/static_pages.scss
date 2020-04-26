@@ -8,12 +8,12 @@ nav.navbar-default {
     rgba(113,190,194,1) 0.2%, rgba(123,199,203,1) 22.9%,
     rgba(140,220,223,1) 43.2%, rgba(160,235,239,1) 63.8%,
     rgba(190,245,249,1) 85.6%);
-  margin: 0px;
-  border: none;
+  margin       : 0px;
+  border       : none;
   border-radius: 0px;
   .navbar-header .navbar-brand {
-    color: #fff !important;
-    font-size: 24px;
+    color      : #fff !important;
+    font-size  : 24px;
     font-weight: 600;
     font-family: arial;
   }
@@ -41,10 +41,10 @@ nav.navbar-default {
 }
 .profile-sidebar .profile-userpicture {
   img {
-    float: none;
-    margin: 0 auto;
-    width: 50%;
-    height: 50%;
+    float        : none;
+    margin       : 0 auto;
+    width        : 50%;
+    height       : 50%;
     border-radius: 50% !important;
   }
 }
@@ -52,9 +52,9 @@ nav.navbar-default {
   text-align: center;
   margin-top: 20px;
   .profile-usertitle-name {
-    color: #5a7391;
-    font-size: 16px;
-    font-weight: 600;
+    color        : #5a7391;
+    font-size    : 16px;
+    font-weight  : 600;
     margin-bottom: 7px;
     a {
       color: #fff;
@@ -65,10 +65,10 @@ nav.navbar-default {
   }
   .profile-usertitle-job {
     text-transform: uppercase;
-    color: #5b9bd1;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    color         : #5b9bd1;
+    font-size     : 12px;
+    font-weight   : 600;
+    margin-bottom : 15px;
   }
 }
 .profile-sidebar .profile-userbuttons {
@@ -76,10 +76,10 @@ nav.navbar-default {
   margin-top: 10px;
   .btn {
     text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 6px 15px;
-    margin-right: 5px;
+    font-size     : 11px;
+    font-weight   : 600;
+    padding       : 6px 15px;
+    margin-right  : 5px;
     &:last-child {
       margin-right: 0;
     }
@@ -89,7 +89,7 @@ nav.navbar-default {
   margin-top: 30px;
   ul li {
     border-bottom: 1px solid #678ea9;
-    padding-left: 5px;
+    padding-left : 5px;
     &:last-child {
       border-bottom: none;
     }
@@ -97,27 +97,27 @@ nav.navbar-default {
       background-color: #fafcfd;
     }
     a {
-      color: #fff;
-      font-size: 14px;
+      color      : #fff;
+      font-size  : 14px;
       font-weight: 600;
       &:hover {
         background-color: #fafcfd;
-        color: #2d6c9f;
-        font-style: italic;
+        color           : #2d6c9f;
+        font-style      : italic;
       }
       i {
         margin-right: 5px;
-        font-size: 14px;
+        font-size   : 14px;
       }
     }
   }
   ul li.active {
     border-bottom: none;
-    background: #f6f9fb;
+    background   : #f6f9fb;
     a {
-      color: #2d6c9f;
+      color           : #2d6c9f;
       background-color: #f6f9fb;
-      margin-left: -2px;
+      margin-left     : -2px;
     }
   }
 }
@@ -125,29 +125,29 @@ nav.navbar-default {
 /* Content */
 .profile .content-right {
   min-height: 660px;
-  position: relative;
+  position  : relative;
   .content {
-    padding: 20px;
-    min-height: 610px;
+    padding         : 20px;
+    min-height      : 610px;
     background-color: #f6f9fb;
   }
   .alert-message {
     text-align: center;
   }
   .footer {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    background: #e8e8e8;
+    width      : 100%;
+    height     : 50px;
+    position   : absolute;
+    bottom     : 0;
+    background : #e8e8e8;
     line-height: 50px;
   }
 }
 
 .img-circle {
-  width: 100px;
-  height: 100px;
+  width        : 100px;
+  height       : 100px;
   border-radius: 50%;
-  border: 4px solid #00BCD4;
-  padding: 8px;
+  border       : 4px solid #00BCD4;
+  padding      : 8px;
 }

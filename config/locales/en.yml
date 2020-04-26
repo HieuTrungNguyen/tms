@@ -15,6 +15,13 @@ en:
     role: "Role"
     action: "Action"
 
+  courses:
+    course:
+      hour: "hours"
+      view_more: "View more.."
+    index:
+      courses_title: "All Courses"
+
   layouts:
     header:
       logo: "Training System"
@@ -26,11 +33,11 @@ en:
       users: "Users"
     profile_sidebar:
       user_picture: "User Picture"
-      overview: "Overview"
-      courses: "Courses"
-      subjects: "Subjects"
-      tasks: "Tasks"
-      users: "Users"
+      overview: "%{icon} Overview"
+      courses: "%{icon} Courses"
+      subjects: "%{icon} Subjects"
+      tasks: "%{icon} Tasks"
+      users: "%{icon} Users"
     application:
       copyright: "Copyright by HTN"
 
