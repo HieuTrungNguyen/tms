@@ -20,3 +20,12 @@ User.create! name: "Hieu Trung Nguyen",
                address: address,
                role: 0
 end
+
+10.times do
+  name = Faker::Lorem.word + " " + Faker::Lorem.word
+  description = Faker::Lorem.paragraph 4
+  time_training = Faker::Number.number 2
+  Course.create! name: name,
+                 description: description,
+                 time_training: time_training
+end

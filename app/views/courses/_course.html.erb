@@ -1,0 +1,24 @@
+<div class="col-md-6">
+  <div class="item">
+    <div class="list-group-item">
+      <div class="row media-item">
+        <div class="col-md-3 media-image-item">
+          <figure class="pull-left">
+            <%= image_tag set_object_img(course.cover, Settings.course.default_cover),
+             class: "media-img img-rounded img-responsive" %>
+          </figure>
+        </div>
+        <div class="col-md-6 media-content">
+          <h4 class="item-heading"><%= course.name %></h4>
+          <p class="item-text"><%= course.description %></p>
+        </div>
+        <div class="col-md-3 media-more-inform text-center">
+          <h3 class="time"><%= course.time_training %> <small><%= t ".hour" %></small></h3>
+        </div>
+      </div>
+      <div class="row">
+        <%= link_to t(".view_more"), "#", class: "btn btn-info btn-block btn-more" %>
+      </div>
+    </div>
+  </div>
+</div>

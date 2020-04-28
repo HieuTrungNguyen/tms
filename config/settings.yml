@@ -3,5 +3,8 @@ user:
   min_pass_length: 6
   min_phone_number_length: 10
   default_avatar: "default_avatar.png"
+  user_picture: "userpicture.png"
   supervisor: 1
   default_per_page: 10
+course:
+  default_cover: "default_course_cover.png"
