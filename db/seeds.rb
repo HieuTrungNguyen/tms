@@ -10,7 +10,7 @@ User.create! name: "Hieu Trung Nguyen",
   name         = "name#{n+1}"
   email        = "example-#{n+1}@gmail.com"
   password     = "123456"
-  phone_number = "0" + Faker::Number.number(9)
+  phone_number = Faker::Number.leading_zero_number digits: 10
   address      = "Cam Giang, Hai Duong"
   User.create! name: name,
                email: email,
@@ -21,10 +21,10 @@ User.create! name: "Hieu Trung Nguyen",
                role: 0
 end
 
-10.times do
+20.times do
   name = Faker::Lorem.word + " " + Faker::Lorem.word
-  description = Faker::Lorem.paragraph 4
-  time_training = Faker::Number.number 2
+  description = Faker::Lorem.paragraph sentence_count: 10
+  time_training = Faker::Number.number digits: 2
   Course.create! name: name,
                  description: description,
                  time_training: time_training

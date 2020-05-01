@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i(new create)
-  before_action :authenticate_supervisor!, only: %i(index destroy)
+  before_action :authenticate_supervisor!, only: %i(new create destroy)
   before_action :load_user, except: %i(new create index)
   before_action :correct_user, only: %i(show edit update)
 
@@ -25,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def show_profile
-    @user = User.find_by id: params[:id]
     respond_to do |format|
       format.js
     end
@@ -56,7 +55,7 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation,
-      :phone_number, :address
+      :phone_number, :address, :avatar
   end
 
   def load_user

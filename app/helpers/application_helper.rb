@@ -1,7 +1,7 @@
 module ApplicationHelper
   def set_avatar user
     user.nil? ? Settings.user.user_picture :
-      set_object_img(user.avatar, Settings.user.default_avatar)
+      set_object_img(user.avatar.url, Settings.user.default_avatar)
   end
 
   def set_object_img object_img, default_img

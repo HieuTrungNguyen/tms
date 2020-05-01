@@ -1,5 +1,6 @@
+max_text_length: 255
+
 user:
-  max_text_length: 255
   min_pass_length: 6
   min_phone_number_length: 10
   default_avatar: "default_avatar.png"

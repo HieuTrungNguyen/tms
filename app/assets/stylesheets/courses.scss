@@ -1,27 +1,38 @@
+/* Index Courses */
+
 .item {
   height       : auto;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 .item .list-group-item {
-  min-height : 180px;
-  padding-top: 20px;
-  box-shadow : 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  min-height : 18rem;
+  padding-top: 2rem;
+  box-shadow : 0 0 0.1rem 0.1rem rgba(20, 23, 28, 0.1),
+    0 0.3rem 0.1rem 0 rgba(20, 23, 28, 0.1);
   transition : all 0.4s;
   &:hover {
-    box-shadow: 4px 2px 14px 1px rgba(20, 23, 28, 0.1),
-      0 3px 1px 0 rgba(20, 23, 28, 0.1);
+    box-shadow: 0.4rem 0.2rem 1.4rem 0.1rem rgba(20, 23, 28, 0.1),
+      0 0.3rem 0.1rem 0 rgba(20, 23, 28, 0.1);
   }
   .media-item {
-    min-height: 140px;
+    min-height: 14rem;
     .media-image-item .media-img {
-      height: 60px;
+      height: 6rem;
     }
     .media-content {
       padding-left: 0;
       h4.item-heading {
-        margin-top : 0;
-        font-weight: 600;
+        margin-top    : 0;
+        font-weight   : 600;
         text-transform: capitalize;
+        a {
+          color          : #333333;
+          text-decoration: none;
+          &:hover {
+            color          : #23527c;
+            text-decoration: underline;
+          }
+        }
       }
       p.item-text {
         overflow   : hidden;
@@ -29,18 +40,139 @@
         line-height: 1.8rem;
         height     : 5.2rem;
         text-align : justify;
-        margin-top : 10px;
+        margin-top : 1rem;
       }
     }
     .media-more-inform {
       h3.time {
         margin-top: 0;
       }
+      div.dropdown {
+        p.setting {
+          padding            : 2rem 1.5rem;
+          background-image   : url(setting.png);
+          background-position: center;
+          background-size    : 2.6rem 2.6rem;
+          background-repeat  : no-repeat;
+          float              : right;
+          cursor             : pointer;
+        }
+      }
     }
   }
 }
 .btn-more {
-  width       : 100px;
+  width       : 10rem;
   float       : right;
-  margin-right: 15px;
+  margin-right: 1.5rem;
+}
+
+/* Show Course */
+
+.course-header {
+  background-color: #2daaa6;
+  height          : 20rem;
+  border-radius   : 1rem;
+  .course-cover {
+    float: left;
+    width: 25rem;
+    img.course-cover-img {
+      height: 20rem;
+      width : 25rem;
+    }
+  }
+  .course-name {
+    float     : left;
+    width     : calc(100% - 25rem);
+    height    : 20rem;
+    text-align: center;
+    h1 {
+      text-transform: capitalize;
+      color         : #fff;
+      font-family   : Regular Bold;
+      font-size     : 5rem;
+      font-weight   : 600;
+      margin        : 0 auto;
+      line-height   : 10rem;
+    }
+    a.btn-start {
+      display         : inline-block;
+      width           : 25rem;
+      height          : 5rem;
+      line-height     : 5rem;
+      background-color: #ffc740;
+      font-size       : 2.3rem;
+      color           : #222;
+      font-family     : Helvetica, sans-serif;
+      text-transform  : uppercase;
+      font-weight     : 600;
+      border-radius   : 5rem;
+      padding         : 0;
+      margin-top      : 2rem;
+      &:hover {
+        box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+.course-details {
+  margin-top: 3rem;
+  .overview {
+    ul li a {
+      font-size: 2rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    ul li.active a:hover {
+      text-decoration: none;
+    }
+    .tab-content {
+      margin-top: 2rem !important;
+      .tab-pane p.course-description {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .more-inform {
+    aside.inform-sidebar {
+      border       : 0.1rem solid #eaeaea;
+      margin-bottom: 5rem;
+      text-align   : center;
+      p {
+        padding      : 2.5rem;
+        font-size    : 2rem;
+        color        : #19191a;
+        border-bottom: 0.1rem solid #eaeaea;
+        span.joined_member {
+          font-size  : 4rem;
+          font-weight: 600;
+          margin     : 1rem 0 0;
+          display    : block;
+          color      : #646466;
+          font-family: Arial;
+        }
+      }
+      dl.timeTraining, dl.prerequisites {
+        margin : 0;
+        padding: 2.5rem;
+        dt {
+          font-size  : 2rem;
+          color      : #19191a;
+          font-weight: 400;
+        }
+        dd {
+          font-size  : 4rem;
+          font-weight: 600;
+          margin     : 1rem 0 0;
+          display    : block;
+          color      : #646466;
+          font-family: Arial;
+        }
+      }
+      dl.timeTraining {
+        border-bottom: 0.1rem solid #eaeaea;
+      }
+    }
+  }
 }

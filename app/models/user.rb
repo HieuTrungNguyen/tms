@@ -6,22 +6,24 @@ class User < ApplicationRecord
 
   before_save {email.downcase!}
 
+  mount_uploader :avatar, AvatarUploader
+
   enum roles: {trainee: 0, supervisor: 1}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
 
-  validates :name, presence: true, length: {maximum: Settings.user.max_text_length}
-  validates :email, presence: true, length: {maximum: Settings.user.max_text_length},
+  validates :name, presence: true, length: {maximum: Settings.max_text_length}
+  validates :email, presence: true, length: {maximum: Settings.max_text_length},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, :password_confirmation, presence: true,
     length: {minimum: Settings.user.min_pass_length,
-    maximum: Settings.user.max_text_length}
+    maximum: Settings.max_text_length}
   validates :phone_number, presence: true,
     length: {minimum: Settings.user.min_phone_number_length},
     format: {with: VALID_PHONE_NUMBER_REGEX}
-  validates :address, presence: true, length: {maximum: Settings.user.max_text_length}
+  validates :address, presence: true, length: {maximum: Settings.max_text_length}
 
   def is_supervisor?
     role == Settings.user.supervisor
