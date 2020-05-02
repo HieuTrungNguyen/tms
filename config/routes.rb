@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :courses
+  resources :courses do
+    member do
+      get :edit_profile
+    end
+  end
 end

@@ -15,6 +15,8 @@ gem "bcrypt", "~> 3.1.11"
 
 gem "faker"
 gem "config"
+gem "carrierwave", "~> 2.1.0"
+gem "mini_magick", "~> 4.3"
 gem "kaminari", "~> 1.2"
 gem "bootstrap-kaminari-views"
 

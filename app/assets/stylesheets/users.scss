@@ -1,40 +1,40 @@
-.containerFrontPage {
+.form {
   margin          : 0 auto;
-  width           : 404px;
+  width           : 40.4rem;
   background-color: #fff;
-  padding         : 30px 20px 0 20px;
+  padding         : 2rem 2rem 0 2rem;
   margin-top      : 3%;
-  border          : 1px solid #000;
-  border-radius   : 5px;
+  border          : 0.1rem solid #000;
+  border-radius   : 0.5rem;
   opacity         : 0.95;
 }
-#titleContainer {
-  font-size    : 22px;
-  margin-bottom: 10px;
+.titleForm {
+  font-size    : 3rem;
+  margin-bottom: 2rem;
   color        : #000;
   font-family  : 'Lato' !important;
   font-weight  : 400;
   text-align   : center;
 }
 #rainbow, #rainbowForForgot {
-  width            : 364px;
+  width            : 36.4rem;
   margin           : 0 auto;
-  height           : 1px;
+  height           : 0.1rem;
   background-repeat: repeat-x;
   background-image : url(color.png);
-  margin-bottom    : 20px;
+  margin-bottom    : 2rem;
 }
 .registerInput {
-  width              : 360px !important;
-  padding-top        : 5px !important;
-  padding-left       : 5px !important;
-  margin-top         : 20px !important;
-  height             : 30px;
-  font-size          : 16px;
+  width              : 36rem !important;
+  padding-top        : 0.5rem !important;
+  padding-left       : 0.5rem !important;
+  margin-top         : 2rem !important;
+  height             : 3rem;
+  font-size          : 1.6rem;
   transition         : 0.5s;
   background-repeat  : no-repeat;
-  background-position: 330px 5px;
-  background-size    : 22px 22px;
+  background-position: 33rem 0.5rem;
+  background-size    : 2.2rem 2.2rem;
   opacity            : 1;
 }
 .nameInput {
@@ -56,12 +56,12 @@
   background-image: url(address.png);
 }
 .signupButton, .loginButton {
-  margin    : 20px;
+  margin    : 2rem;
   text-align: center;
   .btn-form {
-    width      : 360px !important;
-    margin-left: -20px;
-    font-size  : 16px;
+    width      : 36rem !important;
+    margin-left: -2rem;
+    font-size  : 1.6rem;
     font-weight: 600;
     &:hover {
       cursor: pointer;
@@ -69,26 +69,26 @@
   }
 }
 #alreadyMember {
-  height    : 50px;
+  height    : 5rem;
   width     : 100%;
   text-align: center;
 }
 #forgotPass {
   text-align    : center;
-  padding-bottom: 15px;
+  padding-bottom: 1.5rem;
 }
 .checkbox {
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 .title-reset {
   text-align: center;
 }
 .reset {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .list-errors li{
   color  : red;
-  padding: 3px 0px;
+  padding: 0.3rem;
 }
 .modal-title {
   text-align : center;
@@ -98,19 +98,25 @@
 /* Index Users */
 .users-title {
   text-align   : center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 .users-avatar {
-  height       : 50px;
-  width        : 50px;
+  height       : 5rem;
+  width        : 5rem;
   border-radius: 50%;
 }
 .th-user, .td-user {
   text-align: center;
 }
 .td-user {
-  line-height: 50px !important;
+  line-height: 5rem !important;
 }
 .user-text-trans {
   text-transform: capitalize;
+}
+
+/* btn Add New Member for Course & User */
+.btn-add-member {
+  margin-bottom: 2rem;
+  margin-left  : 1.5rem;
 }

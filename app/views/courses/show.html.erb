@@ -1,0 +1,56 @@
+<div class="row course-header">
+  <div class="course-cover">
+    <%= image_tag set_object_img(@course.cover.url, Settings.course.default_cover),
+      class: "course-cover-img img-rounded img-responsive" %>
+  </div>
+  <div class="course-name">
+    <h1><%= @course.name %></h1>
+    <%= link_to t(".start"), "#", class: "btn btn-start" %>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="row course-details">
+  <div class="col-md-8 overview">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#overview"><%= t ".overview" %></a>
+      </li>
+      <li><a data-toggle="tab" href="#details"><%= t ".details" %></a></li>
+      <% if current_user&.is_supervisor? %>
+        <li><a data-toggle="tab" href="#actions"><%= t "form.action" %></a></li>
+      <% end %>
+    </ul>
+    <div class="tab-content">
+      <div id="overview" class="tab-pane fade in active">
+        <p class="course-description"><%= @course.description %></p>
+      </div>
+      <div id="details" class="tab-pane fade"></div>
+      <div id="actions" class="tab-pane fade">
+        <%= link_to t("courses.course.edit"), edit_profile_course_path(@course),
+          remote: true, class: "btn btn-info" %>
+        <%= link_to t("courses.course.delete"), @course, method: :delete,
+          data: {confirm: t("sure?")}, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 more-inform">
+    <aside class="inform-sidebar">
+      <p>
+        <%= t ".join" %>
+        <span class="joined_member">0</span>
+        <%= t ".joined_people" %>
+      </p>
+      <div>
+        <dl class="timeTraining">
+          <dt><%= t ".time_complete" %></dt>
+          <dd><%= @course.time_training %> <%= t ".hours" %></dd>
+        </dl>
+        <dl class="prerequisites">
+          <dt><%= t ".prerequisites" %></dt>
+          <dd><%= t ".none" %></dd>
+        </dl>
+      </div>
+    </aside>
+  </div>
+</div>
+<div class="clearfix"></div>

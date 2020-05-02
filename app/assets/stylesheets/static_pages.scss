@@ -4,16 +4,16 @@ body {
 
 /* Header */
 nav.navbar-default {
-  background-image: radial-gradient(circle 935px at 2.4% 52.5%,
+  background-image: radial-gradient(circle 93.5rem at 2.4% 52.5%,
     rgba(113,190,194,1) 0.2%, rgba(123,199,203,1) 22.9%,
     rgba(140,220,223,1) 43.2%, rgba(160,235,239,1) 63.8%,
     rgba(190,245,249,1) 85.6%);
-  margin       : 0px;
+  margin       : 0;
   border       : none;
-  border-radius: 0px;
+  border-radius: 0;
   .navbar-header .navbar-brand {
     color      : #fff !important;
-    font-size  : 24px;
+    font-size  : 2.4rem;
     font-weight: 600;
     font-family: arial;
   }
@@ -32,30 +32,30 @@ nav.navbar-default {
 
 /* Profile Sidebar*/
 .profile .profile-sidebar {
-  padding: 20px 0 10px 0;
   background-image: -o-linear-gradient(270.6deg, rgba(42,62,101,1) -27.7%,
     rgba(91,125,189,1) 165.8%);
   background-image: linear-gradient(179.4deg, rgba(42,62,101,1) -27.7%,
     rgba(91,125,189,1) 165.8%);
-  min-height: 660px;
+  min-height: 66rem;
+  padding   : 2rem 0 1rem 0;
 }
 .profile-sidebar .profile-userpicture {
-  img {
+  img.profile-useravatar {
     float        : none;
     margin       : 0 auto;
-    width        : 50%;
-    height       : 50%;
+    width        : 11rem;
+    height       : 11rem;
     border-radius: 50% !important;
   }
 }
 .profile-sidebar .profile-usertitle {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
   .profile-usertitle-name {
     color        : #5a7391;
-    font-size    : 16px;
+    font-size    : 1.6rem;
     font-weight  : 600;
-    margin-bottom: 7px;
+    margin-bottom: 0.7rem;
     a {
       color: #fff;
       &:hover {
@@ -66,30 +66,30 @@ nav.navbar-default {
   .profile-usertitle-job {
     text-transform: uppercase;
     color         : #5b9bd1;
-    font-size     : 12px;
+    font-size     : 1.2rem;
     font-weight   : 600;
-    margin-bottom : 15px;
+    margin-bottom : 1.5rem;
   }
 }
 .profile-sidebar .profile-userbuttons {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 1rem;
   .btn {
     text-transform: uppercase;
-    font-size     : 11px;
+    font-size     : 1.1rem;
     font-weight   : 600;
-    padding       : 6px 15px;
-    margin-right  : 5px;
+    padding       : 0.6rem 1.5rem;
+    margin-right  : 0.5rem;
     &:last-child {
       margin-right: 0;
     }
   }
 }
 .profile-sidebar .profile-usermenu {
-  margin-top: 30px;
+  margin-top: 3rem;
   ul li {
-    border-bottom: 1px solid #678ea9;
-    padding-left : 5px;
+    border-bottom: 0.1rem solid #678ea9;
+    padding-left : 0.5rem;
     &:last-child {
       border-bottom: none;
     }
@@ -98,7 +98,7 @@ nav.navbar-default {
     }
     a {
       color      : #fff;
-      font-size  : 14px;
+      font-size  : 1.4rem;
       font-weight: 600;
       &:hover {
         background-color: #fafcfd;
@@ -106,8 +106,8 @@ nav.navbar-default {
         font-style      : italic;
       }
       i {
-        margin-right: 5px;
-        font-size   : 14px;
+        margin-right: 0.5rem;
+        font-size   : 1.4rem;
       }
     }
   }
@@ -117,18 +117,17 @@ nav.navbar-default {
     a {
       color           : #2d6c9f;
       background-color: #f6f9fb;
-      margin-left     : -2px;
+      margin-left     : -0.2rem;
     }
   }
 }
 
 /* Content */
 .profile .content-right {
-  min-height: 660px;
-  position  : relative;
+  min-height: 66rem;
   .content {
-    padding         : 20px;
-    min-height      : 610px;
+    padding         : 2rem;
+    min-height      : 61rem;
     background-color: #f6f9fb;
   }
   .alert-message {
@@ -136,18 +135,16 @@ nav.navbar-default {
   }
   .footer {
     width      : 100%;
-    height     : 50px;
-    position   : absolute;
-    bottom     : 0;
+    height     : 5rem;
     background : #e8e8e8;
-    line-height: 50px;
+    line-height: 5rem;
   }
 }
 
 .img-circle {
-  width        : 100px;
-  height       : 100px;
+  width        : 10rem;
+  height       : 10rem;
   border-radius: 50%;
-  border       : 4px solid #00BCD4;
-  padding      : 8px;
+  border       : 0.4rem solid #00BCD4;
+  padding      : 0.8rem;
 }

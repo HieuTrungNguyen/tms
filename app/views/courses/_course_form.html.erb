@@ -1,0 +1,29 @@
+<div class="form course-form">
+  <%= form_for @course, html: {multipart: true} do |f| %>
+    <h2 class="titleForm"><%= yield :title_course_form %></h2>
+
+    <%= render "shared/error_messages", object: f.object %>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: "courseNameInput registerInput form-control",
+        placeholder: t("form.courseName") %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :description, rows: 7,
+        class: "courseDescriptionInput registerInput form-control",
+        placeholder: t("form.description") %>
+    </div>
+    <div class="form-group">
+      <%= f.number_field :time_training,
+        class: "courseTimeTrainingInput registerInput form-control",
+        placeholder: t("form.duration") %>
+    </div>
+    <div class="form-group">
+      <%= f.label :cover, t("form.courseCover") %>
+      <%= f.file_field :cover, class: "courseCover" %>
+    </div>
+    <div class="addCourseBtn form-group">
+      <%= f.submit yield(:submit_course_form), class: "btn btn-primary btn-block btn-form" %>
+    </div>
+  <% end %>
+</div>
