@@ -1,13 +1,18 @@
 <div class="profile-sidebar">
   <div class="profile-userpicture">
-  <%= image_tag(set_avatar(current_user), alt: t("user_picture"),
-    class: "profile-useravatar img-responsive") %>
+    <%= image_tag(set_avatar(current_user), alt: t("user_picture"),
+      class: "profile-useravatar img-responsive") %>
   </div>
   <div class="profile-usertitle">
     <div class="profile-usertitle-name">
     <% if logged_in? %>
+      <% if current_user.is_supervisor? %>
       <%= link_to current_user.name, show_profile_user_path(current_user),
         data: {toggle: "modal"}, remote: true %>
+      <% else %>
+      <%= link_to current_user.name, show_profile_trainee_user_path(current_user),
+        data: {toggle: "modal"}, remote: true %>
+      <% end %>
     <% end %>
     </div>
     <div class="profile-usertitle-job"></div>
@@ -18,6 +23,12 @@
         <%= link_to t(".overview", icon:
           content_tag(:i, "", class: "glyphicon glyphicon-home")).html_safe, "#" %>
       </li>
+      <% if current_user&.is_supervisor? %>
+        <li>
+          <%= link_to t(".users", icon:
+            content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, users_path %>
+        </li>
+      <% end %>
       <li>
         <%= link_to t(".courses", icon:
           content_tag(:i, "", class: "fa fa-list-alt")).html_safe, courses_path %>
@@ -29,10 +40,6 @@
       <li>
         <%= link_to t(".tasks", icon:
           content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
-      </li>
-      <li>
-        <%= link_to t(".users", icon:
-          content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, "#" %>
       </li>
     </ul>
   </div>
