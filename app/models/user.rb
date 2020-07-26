@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  enum roles: {trainee: 0, supervisor: 1}
+  enum role: {trainee: 0, supervisor: 1}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
