@@ -18,6 +18,7 @@ en:
     description: "Description"
     duration: "Duration"
     courseCover: "Course Cover"
+    content: "Content"
 
   courses:
     course:
@@ -25,6 +26,10 @@ en:
       view_more: "View more.."
       edit: "Edit"
       delete: "Delete"
+    detail_show_course:
+      subjects: "Subjects"
+      member: "Member"
+      tasks: "Tasks"
     index:
       courses_title: "All Courses"
       btn_addCourse: "Add New Couse"

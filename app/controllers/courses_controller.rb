@@ -21,7 +21,9 @@ class CoursesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @subjects = CourseSubject.get_subjects @course.id
+  end
 
   def edit_profile
     respond_to do |format|
