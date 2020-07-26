@@ -96,7 +96,7 @@
 }
 
 /* Index Users */
-.users-title {
+.users-title, .courses-title {
   text-align   : center;
   margin-bottom: 3rem;
 }
@@ -104,6 +104,7 @@
   height       : 5rem;
   width        : 5rem;
   border-radius: 50%;
+  border       : 1px solid #ccc;
 }
 .th-user, .td-user {
   text-align: center;

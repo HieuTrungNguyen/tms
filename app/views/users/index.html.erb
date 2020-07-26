@@ -1,8 +1,10 @@
 <div class="row">
   <h2 class="users-title"><%= t ".index_title" %></h2>
+  <% if current_user.is_supervisor? %>
   <div class="add-member">
     <%= link_to t(".btn_addUser"), new_user_path, class: "btn-add-member btn btn-info" %>
   </div>
+  <% end %>
   <div class="table-responsive">
     <table class="table table-striped table-hover">
       <thead>
@@ -13,7 +15,9 @@
           <th class="th-user"><%= t "form.phone_number" %></th>
           <th class="th-user"><%= t "form.address" %></th>
           <th class="th-user"><%= t "form.role" %></th>
-          <th class="th-user" colspan="2"><%= t "form.action" %></th>
+          <% if current_user&.is_supervisor? %>
+            <th class="th-user" colspan="2"><%= t "form.action" %></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>

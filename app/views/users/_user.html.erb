@@ -5,11 +5,13 @@
   <td class="td-user"><%= user.phone_number %></td>
   <td class="td-user"><%= user.address %></td>
   <td class="td-user user-text-trans"><%= get_role_user user %></td>
-  <td class="td-user">
-    <%= link_to t(".show"), user, class: "btn btn-primary" %>
-  </td>
-  <td class="td-user">
-    <%= link_to t(".delete"), user, method: :delete, data: {confirm: t("sure?")},
-      class: "btn btn-danger" %>
-  </td>
+  <% if current_user&.is_supervisor? %>
+    <td class="td-user">
+      <%= link_to t(".show"), user, class: "btn btn-primary" %>
+    </td>
+    <td class="td-user">
+      <%= link_to t(".delete"), user, method: :delete, data: {confirm: t("sure?")},
+        class: "btn btn-danger" %>
+    </td>
+  <% end %>
 </tr>
