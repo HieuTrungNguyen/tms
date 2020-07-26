@@ -1,4 +1,5 @@
 en:
+  copyright: "Copyright by HTN"
   login_first: "You must log in first!"
   role: "Permission role!"
   try_again: "This action's failed. Try again!"
@@ -20,6 +21,18 @@ en:
     courseCover: "Course Cover"
     content: "Content"
 
+  flash:
+    courses:
+      add_course: "%{name}'s Course is added successfully!"
+      add_fail: "Add new course failed. Try again!"
+      update_course: "%{name}'s Course is updated!"
+      delete_course: "%{name}'s Course is deleted!"
+    users:
+      created_success: "Create account successfully!"
+      created_fail: "Sign up failed. Try again!"
+      update_success: "Updated profile successfully!"
+      delete_success: "You're deleted this user successfully."
+
   courses:
     course:
       hour: "hours"
@@ -36,9 +49,6 @@ en:
     new:
       title_addCourse: "Add A Course"
       createCourse: "Create New Course"
-    create:
-      add_course: "%{name}'s Course is added successfully!"
-      add_fail: "Add new course failed. Try again!"
     show:
       start: "Start"
       overview: "Overview"
@@ -51,10 +61,6 @@ en:
       none: "None"
     edit:
       edit_course: "Edit Course"
-    update:
-      update_course: "%{name}'s Course is updated!"
-    destroy:
-      delete_course: "%{name}'s Course is deleted!"
 
   layouts:
     header:
@@ -64,7 +70,6 @@ en:
       settings: "Settings"
       logout: "Log out"
       help: "Help"
-      users: "Users"
     profile_sidebar:
       user_picture: "User Picture"
       overview: "%{icon} Overview"
@@ -72,8 +77,6 @@ en:
       subjects: "%{icon} Subjects"
       tasks: "%{icon} Tasks"
       users: "%{icon} Users"
-    application:
-      copyright: "Copyright by HTN"
 
   profiles:
     show_user_profile:
@@ -101,16 +104,9 @@ en:
       already_have_acc: "Already have an account?"
       login: "Log in here"
       btn_signup: "Create Account"
-    create:
-      created_success: "Create account successfully!"
-      created_fail: "Sign up failed. Try again!"
     index:
       index_title: "Users"
       btn_addUser: "Add New User"
     edit:
       save: "Save changes"
       edit_title: "Edit Your Profile"
-    update:
-      update_success: "Updated profile successfully!"
-    destroy:
-      delete_success: "You're deleted this user successfully."

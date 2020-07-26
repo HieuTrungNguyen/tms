@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i(new create)
-  before_action :authenticate_supervisor!, only: %i(new create destroy)
+  before_action :authenticate_supervisor!, only: %i(index destroy)
   before_action :load_user, except: %i(new create index)
   before_action :correct_user, only: %i(show edit update)
 
@@ -11,11 +11,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t ".created_success"
+      flash[:success] = t "flash.users.created_success"
       log_in @user
-      redirect_to @user
+      @user.role.to_i == User.roles[:supervisor] ? redirect_to(@user)
+                                                 : redirect_to([:trainee, @user])
     else
-      flash[:danger] = t ".created_fail"
+      flash[:danger] = t "flash.users.created_fail"
       render :new
     end
   end
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t ".update_success"
+      flash[:success] = t "flash.users.update_success"
     else
       flash[:danger] = t "try_again"
     end
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t ".delete_success"
+      flash[:success] = t "flash.users.delete_success"
     else
       flash[:danger] = t "try_again"
     end
@@ -55,7 +56,7 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit :name, :email, :password, :password_confirmation,
-      :phone_number, :address, :avatar
+      :phone_number, :address, :avatar, :role
   end
 
   def load_user

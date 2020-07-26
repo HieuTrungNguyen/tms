@@ -13,10 +13,10 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new course_params
     if @course.save
-      flash[:success] = t ".add_course", name: @course.name
+      flash[:success] = t "flash.courses.add_course", name: @course.name
       redirect_to @course
     else
-      flash.now[:danger] = t ".add_fail"
+      flash.now[:danger] = t "flash.courses.add_fail"
       render :new
     end
   end
@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update_attributes course_params
-      flash[:success] = t ".update_course", name: @course.name
+      flash[:success] = t "flash.courses.update_course", name: @course.name
     else
       flash[:danger] = t "try_again"
     end
@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
 
   def destroy
     if @course.destroy
-      flash[:success] = t ".delete_course", name: @course.name
+      flash[:success] = t "flash.courses.delete_course", name: @course.name
     else
       flash[:danger] = t "try_again"
     end
