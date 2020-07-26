@@ -10,7 +10,7 @@
   <div class="clearfix"></div>
 </div>
 <div class="row course-details">
-  <div class="col-md-8 overview">
+  <div class="col-md-8 overviews">
     <ul class="nav nav-tabs">
       <li class="active">
         <a data-toggle="tab" href="#overview"><%= t ".overview" %></a>
@@ -24,8 +24,10 @@
       <div id="overview" class="tab-pane fade in active">
         <p class="course-description"><%= @course.description %></p>
       </div>
-      <div id="details" class="tab-pane fade"></div>
-      <div id="actions" class="tab-pane fade">
+      <div id="details" class="tab-pane fade in">
+        <%= render "detail_show_course" %>
+      </div>
+      <div id="actions" class="tab-pane fade in">
         <%= link_to t("courses.course.edit"), edit_profile_course_path(@course),
           remote: true, class: "btn btn-info" %>
         <%= link_to t("courses.course.delete"), @course, method: :delete,
