@@ -1,0 +1,20 @@
+<div class="list-group">
+  <div class="list-group-item user-card">
+    <div class="row media">
+      <div class="checkbox checkbox-user-card pull-left">
+        <input type="checkbox" value="">
+      </div>
+      <span class="label label-danger pull-right"><%= user.status %></span>
+      <div class="clearfix"></div>
+      <div class="media-container">
+        <div class="media-heading pull-left">
+          <%= image_tag set_avatar(user), class: "media-object-user" %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-username"><%= user.name %></h4>
+          <p><%= user.email %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

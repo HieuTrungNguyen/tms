@@ -5,7 +5,8 @@ user:
   min_phone_number_length: 10
   default_avatar: "default_avatar.png"
   user_picture: "userpicture.png"
-  supervisor: 1
+  supervisor: "supervisor"
+  trainee: "trainee"
   default_per_page: 10
 course:
   default_cover: "default_course_cover.png"

@@ -1,0 +1,21 @@
+<div class="item-subject">
+  <div class="row">
+    <div class="col-md-2">
+      <%= image_tag "default_course_cover.png", class: "subject_cover" %>
+    </div>
+    <div class="col-md-9">
+      <div class="content-subject">
+        <h4><%= link_to subject.name, "#" %></h4>
+        <p>
+          <span class="italic-text"><%= t "form.description" %>:</span>
+          <%= subject.description %>
+        </p>
+        <p>
+          <span class="italic-text"><%= t "form.content" %>:</span>
+          <%= subject.content %>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

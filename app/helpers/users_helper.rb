@@ -1,5 +1,5 @@
 module UsersHelper
   def get_role_user user
-    User.roles.keys[user.role]
+    User.roles[user.role]
   end
 end

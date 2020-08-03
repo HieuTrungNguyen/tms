@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      user.role.to_i == User.roles[:supervisor] ? redirect_to(user)
-                                                : redirect_to([:trainee, user])
+      user.is_supervisor? ? redirect_to(user)
+                            : redirect_to([:trainee, user])
     else
       flash.now[:danger] = t ".invalid"
       render :new

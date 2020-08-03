@@ -220,3 +220,37 @@
     }
   }
 }
+
+/* User of Course */
+.flash-danger {
+  color           : #a94442;
+  background-color: #f2dede;
+  border          : 1px solid #ebccd1;
+  border-radius   : 4px;
+  text-align      : center;
+  padding         : 1.5rem;
+}
+.user-card {
+  min-height: 10rem !important;
+  div.media {
+    padding: 1rem;
+    div.checkbox-user-card {
+      margin-top: 0;
+    }
+    div.media-container {
+      .media-heading img.media-object-user {
+        height: 6rem;
+        width : 6rem;
+      }
+      .media-body {
+        padding-left: 1rem;
+        h4.media-username {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

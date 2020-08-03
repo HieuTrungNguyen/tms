@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = t "flash.users.created_success"
       log_in @user
-      @user.role.to_i == User.roles[:supervisor] ? redirect_to(@user)
-                                                 : redirect_to([:trainee, @user])
+      user.is_supervisor? ? redirect_to(@user)
+                           : redirect_to([:trainee, @user])
     else
       flash[:danger] = t "flash.users.created_fail"
       render :new

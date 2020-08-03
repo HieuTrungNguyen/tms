@@ -4,39 +4,47 @@
       <%= t ".subjects" %> <span class="badge"><%= @course.subjects.count %></span>
     </a></li>
     <li><a data-toggle="tab" href="#member">
-      <%= t ".member" %>
+      <%= t ".member" %> <span class="badge"><%= @course.users.count %></span>
     </a></li>
     <li><a data-toggle="tab" href="#tasks">
       <%= t ".tasks" %>
     </a></li>
   </ul>
   <div class="tab-content">
+    <% if logged_in? %>
     <div class="tab-pane fade in active" id="subjects">
-      <% @subjects.each do |subject| %>
-        <div class="item-subject">
-          <div class="row">
-            <div class="col-md-2">
-              <%= image_tag "default_course_cover.png", class: "subject_cover" %>
+      <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
+    </div>
+    <div class="tab-pane fade in" id="member">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <%= t "role.supervisor" %> <span class="badge"><%= @supervisors.size %></span>
             </div>
-            <div class="col-md-9">
-              <div class="content-subject">
-                <h4><%= link_to subject.name, "#" %></h4>
-                <p>
-                  <span class="italic-text"><%= t "form.description" %>:</span>
-                  <%= subject.description %>
-                </p>
-                <p>
-                  <span class="italic-text"><%= t "form.content" %>:</span>
-                  <%= subject.content %>
-                </p>
-              </div>
+            <div class="panel-body">
+              <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
             </div>
-            <div class="col-md-1"></div>
           </div>
         </div>
-      <% end %>
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <%= t "role.trainee" %> <span class="badge"><%= @trainees.size %></span>
+            </div>
+            <div class="panel-body">
+              <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="tab-pane fade in" id="member"></div>
     <div class="tab-pane fade in" id="tasks"></div>
+    <% else %>
+      <div class="flash-danger">
+        <button class="close" type="button" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= t "login_first" %>
+      </div>
+    <% end %>
   </div>
 </div>

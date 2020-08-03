@@ -48,3 +48,14 @@ courses.each do |course|
                           status: "open"
   end
 end
+
+courses.each do |course|
+  users = User.all.sample(rand(5..30))
+  users.each do |user|
+    UserCourse.create! user_id: user.id,
+                       course_id: course.id,
+                       status: "active",
+                       date_join: Time.zone.now,
+                       finished_at: Time.zone.parse('2020-08-31 23:59:59')
+  end
+end

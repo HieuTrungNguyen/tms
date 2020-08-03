@@ -21,6 +21,10 @@ en:
     courseCover: "Course Cover"
     content: "Content"
 
+  role:
+    supervisor: "Supervisor"
+    trainee: "Trainee"
+
   flash:
     courses:
       add_course: "%{name}'s Course is added successfully!"

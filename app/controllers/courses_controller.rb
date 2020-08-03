@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, :authenticate_supervisor!, except: %i(index show)
   before_action :load_course, except: %i(index new create)
+  before_action :load_subjects_in_course, :load_supervisors_in_course,
+    :load_trainees_in_course, only: :show
 
   def index
     @courses = Course.all.order_desc.page(params[:page]).per 10
@@ -21,9 +23,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def show
-    @subjects = CourseSubject.get_subjects @course.id
-  end
+  def show; end
 
   def edit_profile
     respond_to do |format|
