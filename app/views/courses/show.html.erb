@@ -39,7 +39,7 @@
     <aside class="inform-sidebar">
       <p>
         <%= t ".join" %>
-        <span class="joined_member">0</span>
+        <span class="joined_member"><%= @course.users.count %></span>
         <%= t ".joined_people" %>
       </p>
       <div>
