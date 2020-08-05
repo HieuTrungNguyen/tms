@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   resources :courses do
     member do
       get :edit_profile
+      get :member_remaining
+    end
+    collection do
+      get :add_member
     end
   end
 end

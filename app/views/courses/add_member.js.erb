@@ -1,0 +1,8 @@
+$('#modal-add-member').modal("toggle");
+$('.panel-supervisors').html('<%= j(render partial: "common/user_of_course",
+  collection: @supervisors, as: :user) %>');
+$('.panel-trainees').html('<%= j(render partial: "common/user_of_course",
+  collection: @trainees, as: :user) %>');
+$('.supervisors-count').html('<%= @supervisors.size %>');
+$('.trainees-count').html('<%= @trainees.size %>');
+$('.course-users-count').html('<%= @course.users.count %>');

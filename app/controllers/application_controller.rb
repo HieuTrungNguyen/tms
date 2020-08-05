@@ -19,14 +19,14 @@ class ApplicationController < ActionController::Base
   end
 
   def load_subjects_in_course
-    @subjects = CourseSubject.get_subjects_on_course @course.id
+    @subjects = CourseSubject.get_subjects_in_course @course.id
   end
 
   def load_supervisors_in_course
-    @supervisors = UserCourse.get_users_on_course_with_role @course.id, User.supervisor
+    @supervisors = UserCourse.get_users_in_course_with_role @course.id, User.supervisor
   end
 
   def load_trainees_in_course
-    @trainees = UserCourse.get_users_on_course_with_role @course.id, User.trainee
+    @trainees = UserCourse.get_users_in_course_with_role @course.id, User.trainee
   end
 end

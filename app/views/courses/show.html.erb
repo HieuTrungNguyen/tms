@@ -5,6 +5,7 @@
   </div>
   <div class="course-name">
     <h1><%= @course.name %></h1>
+    <input type="hidden" id="course-id" value="<%= @course.id %>">
     <%= link_to t(".start"), "#", class: "btn btn-start" %>
   </div>
   <div class="clearfix"></div>
@@ -39,7 +40,7 @@
     <aside class="inform-sidebar">
       <p>
         <%= t ".join" %>
-        <span class="joined_member"><%= @course.users.count %></span>
+        <span class="joined_member course-users-count"><%= @course.users.count %></span>
         <%= t ".joined_people" %>
       </p>
       <div>

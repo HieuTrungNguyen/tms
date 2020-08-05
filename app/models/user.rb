@@ -8,8 +8,6 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  enum role: [:trainee, :supervisor]
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
 
@@ -24,6 +22,12 @@ class User < ApplicationRecord
     length: {minimum: Settings.user.min_phone_number_length},
     format: {with: VALID_PHONE_NUMBER_REGEX}
   validates :address, presence: true, length: {maximum: Settings.max_text_length}
+
+  enum role: [:trainee, :supervisor]
+
+  scope :get_users_not_exist_in_course, ->(course_id) do
+    where("id NOT IN (?)", UserCourse.get_users_id_in_course(course_id))
+  end
 
   def is_supervisor?
     role == Settings.user.supervisor
