@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, :authenticate_supervisor!, except: %i(index show)
-  before_action :load_course, except: %i(index new create)
+  before_action :load_course, except: %i(index new create add_member)
   before_action :load_subjects_in_course, :load_supervisors_in_course,
     :load_trainees_in_course, only: :show
 
@@ -49,6 +49,40 @@ class CoursesController < ApplicationController
       flash[:danger] = t "try_again"
     end
     redirect_to courses_path
+  end
+
+  def member_remaining
+    @users = User.get_users_not_exist_in_course(@course.id)
+    respond_to :js
+  end
+
+  def add_member
+    users_id = params[:usersChecked]
+    course_id = params[:courseId]
+    @course = Course.find_by id: course_id
+    if @course
+      begin
+        UserCourse.transaction do
+          users_id.each do |user_id|
+            UserCourse.create! user_id: user_id.to_i,
+                               course_id: @course.id.to_i,
+                               status: :active,
+                               date_join: Time.now
+            load_supervisors_in_course
+            load_trainees_in_course
+          end
+        end
+      rescue => e
+        respond_to do |format|
+          format.json{render json: {status: 403}}
+        end
+      end
+      respond_to :js
+    else
+      respond_to do |format|
+        format.json{render json: {status: 404}}
+      end
+    end
   end
 
   private

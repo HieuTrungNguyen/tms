@@ -221,6 +221,11 @@
   }
 }
 
+/* Add Member to Course */
+a.link-add-member {
+  margin-bottom: 1.5rem;
+}
+
 /* User of Course */
 .flash-danger {
   color           : #a94442;
@@ -251,6 +256,30 @@
           font-size: 1.3rem;
         }
       }
+    }
+  }
+}
+
+/* Add Member To Course*/
+.media-add-member {
+  margin-left: 0;
+}
+.add-member-card {
+  div.checkbox-user-card {
+    input[type="checkbox"] {
+      position: absolute;
+      top     : 2rem;
+    }
+  }
+  div.media-container {
+    margin-left: 3rem;
+    h4.media-heading {
+      color     : #397c5f;
+      font-style: italic;
+      height: 3rem;
+    }
+    p {
+      text-transform: capitalize;
     }
   }
 }

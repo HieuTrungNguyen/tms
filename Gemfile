@@ -19,6 +19,7 @@ gem "carrierwave", "~> 2.1.0"
 gem "mini_magick", "~> 4.3"
 gem "kaminari", "~> 1.2"
 gem "bootstrap-kaminari-views"
+gem "i18n-js"
 
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"

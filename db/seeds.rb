@@ -7,7 +7,7 @@ User.create! name: "Hieu Trung Nguyen",
              role: 1
 
 50.times do |n|
-  name         = "name#{n+1}"
+  name         = Faker::Name.name
   email        = "example-#{n+1}@gmail.com"
   password     = "123456"
   phone_number = Faker::Number.leading_zero_number digits: 10

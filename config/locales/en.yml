@@ -21,7 +21,7 @@ en:
     courseCover: "Course Cover"
     content: "Content"
 
-  role:
+  roles:
     supervisor: "Supervisor"
     trainee: "Trainee"
 
@@ -47,6 +47,11 @@ en:
       subjects: "Subjects"
       member: "Member"
       tasks: "Tasks"
+      add_member: "Add member"
+    modal_add_member:
+      title_add_member: "Add Member In Course"
+      close: "Close"
+      add: "Add"
     index:
       courses_title: "All Courses"
       btn_addCourse: "Add New Couse"
