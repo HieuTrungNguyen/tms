@@ -41,25 +41,14 @@
       </div>
     </div>
     <div class="modal-footer">
-      <% if user.is_supervisor? %>
       <div class="pull-left">
-        <%= link_to user do %>
+        <%= link_to show_path(user) do %>
           <button class="btn btn-success"><%= t "users.user.show" %></button>
         <% end %>
-        <%= link_to edit_user_path(user) do %>
+        <%= link_to edit_path(user) do %>
           <button class="btn btn-primary"><%= t ".edit_profile" %></button>
         <% end %>
       </div>
-      <% else %>
-      <div class="pull-left">
-        <%= link_to [:trainee, user] do %>
-          <button class="btn btn-success"><%= t "users.user.show" %></button>
-        <% end %>
-        <%= link_to edit_trainee_user_path(user) do %>
-          <button class="btn btn-primary"><%= t ".edit_profile" %></button>
-        <% end %>
-      </div>
-      <% end %>
       <div class="pull-right">
         <button class="btn btn-default" data-dismiss="modal">
           <%= t ".close" %>

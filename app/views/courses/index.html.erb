@@ -1,9 +1,9 @@
 <div class="row">
   <h1 class="courses-title"><%= t ".courses_title" %></h1>
-  <% if current_user&.is_supervisor? %>
-  <div class="add-member">
-    <%= link_to t(".btn_addCourse"), new_course_path, class: "btn-add-member btn btn-info" %>
-  </div>
+  <% if current_user&.supervisor? %>
+    <div class="add-member">
+      <%= link_to t(".btn_addCourse"), new_course_path, class: "btn-add-member btn btn-info" %>
+    </div>
   <% end %>
   <div class="list-group">
     <%= render @courses %>

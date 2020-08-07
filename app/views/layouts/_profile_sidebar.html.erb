@@ -5,15 +5,10 @@
   </div>
   <div class="profile-usertitle">
     <div class="profile-usertitle-name">
-    <% if logged_in? %>
-      <% if current_user.is_supervisor? %>
-      <%= link_to current_user.name, show_profile_user_path(current_user),
-        data: {toggle: "modal"}, remote: true %>
-      <% else %>
-      <%= link_to current_user.name, show_profile_trainee_user_path(current_user),
-        data: {toggle: "modal"}, remote: true %>
+      <% if logged_in? %>
+        <%= link_to current_user.name, show_profile_path(current_user),
+          data: {toggle: "modal"}, remote: true %>
       <% end %>
-    <% end %>
     </div>
     <div class="profile-usertitle-job"></div>
   </div>

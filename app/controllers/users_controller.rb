@@ -13,8 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = t "flash.users.created_success"
       log_in @user
-      user.is_supervisor? ? redirect_to(@user)
-                           : redirect_to([:trainee, @user])
+      user.supervisor? ? redirect_to(@user) : redirect_to([:trainee, @user])
     else
       flash[:danger] = t "flash.users.created_fail"
       render :new
@@ -61,10 +60,10 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find_by id: params[:id]
-    render_404 unless @user
+    redirect_to root_path unless @user
   end
 
   def correct_user
-    redirect_to root_path unless current_user.is_supervisor? || current_user?(@user)
+    redirect_to root_path unless current_user.supervisor? || current_user?(@user)
   end
 end

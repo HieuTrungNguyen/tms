@@ -35,7 +35,7 @@
   </div>
   <div class="form-group">
     <%= f.label :role %>
-    <%= f.number_field :role %>
+    <%= f.select :role, User.roles.keys, class: "form-control" %>
   </div>
   <div class="signupButton form-group">
     <%= f.submit yield(:btn_text), class: "btn btn-primary btn-block btn-form" %>

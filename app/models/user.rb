@@ -29,10 +29,6 @@ class User < ApplicationRecord
     where("id NOT IN (?)", UserCourse.get_users_id_in_course(course_id))
   end
 
-  def is_supervisor?
-    role == Settings.user.supervisor
-  end
-
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
