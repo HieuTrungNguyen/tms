@@ -5,7 +5,7 @@
   <td class="td-user"><%= user.phone_number %></td>
   <td class="td-user"><%= user.address %></td>
   <td class="td-user user-text-trans"><%= user.role %></td>
-  <% if current_user&.is_supervisor? %>
+  <% if current_user&.supervisor? %>
     <td class="td-user">
       <%= link_to t(".show"), user, class: "btn btn-primary" %>
     </td>

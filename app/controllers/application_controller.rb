@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_supervisor!
-    return if current_user.is_supervisor?
+    return if current_user.supervisor?
     flash[:danger] = t "role"
     redirect_to root_path
   end

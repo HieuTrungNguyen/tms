@@ -13,44 +13,44 @@
   </ul>
   <div class="tab-content">
     <% if logged_in? %>
-    <div class="tab-pane fade in active" id="subjects">
-      <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
-    </div>
-    <div class="tab-pane fade in" id="member">
-      <% if current_user.is_supervisor? %>
-        <div class="add-member">
-          <%= link_to t(".add_member"), member_remaining_course_path(@course),
-            method: :get, class: "btn btn-info link-add-member pull-right",
-            data: {toggle: "modal", target: "#modal-add-member"}, remote: true %>
-        </div>
-        <div class="clearfix"></div>
-      <% end %>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <%= t "roles.supervisor" %>
-              <span class="badge supervisors-count"><%= @supervisors.size %></span>
-            </div>
-            <div class="panel-body panel-supervisors">
-              <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
+      <div class="tab-pane fade in active" id="subjects">
+        <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
+      </div>
+      <div class="tab-pane fade in" id="member">
+        <% if current_user.supervisor? %>
+          <div class="add-member">
+            <%= link_to t(".add_member"), member_remaining_course_path(@course),
+              method: :get, class: "btn btn-info link-add-member pull-right",
+              data: {toggle: "modal", target: "#modal-add-member"}, remote: true %>
+          </div>
+          <div class="clearfix"></div>
+        <% end %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <%= t "roles.supervisor" %>
+                <span class="badge supervisors-count"><%= @supervisors.size %></span>
+              </div>
+              <div class="panel-body panel-supervisors">
+                <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <%= t "roles.trainee" %>
-              <span class="badge trainees-count"><%= @trainees.size %></span>
-            </div>
-            <div class="panel-body panel-trainees">
-              <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+          <div class="col-md-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <%= t "roles.trainee" %>
+                <span class="badge trainees-count"><%= @trainees.size %></span>
+              </div>
+              <div class="panel-body panel-trainees">
+                <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="tab-pane fade in" id="tasks"></div>
+      <div class="tab-pane fade in" id="tasks"></div>
     <% else %>
       <div class="flash-danger">
         <button class="close" type="button" data-dismiss="alert" aria-hidden="true">×</button>

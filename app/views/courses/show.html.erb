@@ -17,7 +17,7 @@
         <a data-toggle="tab" href="#overview"><%= t ".overview" %></a>
       </li>
       <li><a data-toggle="tab" href="#details"><%= t ".details" %></a></li>
-      <% if current_user&.is_supervisor? %>
+      <% if current_user&.supervisor? %>
         <li><a data-toggle="tab" href="#actions"><%= t "form.action" %></a></li>
       <% end %>
     </ul>

@@ -14,16 +14,16 @@
         </div>
         <div class="col-md-3 media-more-inform text-center">
           <h3 class="time"><%= course.time_training %> <small><%= t ".hour" %></small></h3>
-          <div class="dropdown">
-            <p class="setting dropdown-toggle" data-toggle="dropdown"></p>
-            <% if current_user&.is_supervisor? %>
-              <ul class="dropdown-menu">
-                <li><%= link_to t(".edit"), edit_course_path(course) %></li>
-                <li><%= link_to t(".delete"), course, method: :delete,
-                  data: {confirm: t("sure?")} %></li>
-              </ul>
-            <% end %>
-          </div>
+          <% if current_user&.supervisor? %>
+            <div class="dropdown">
+              <p class="setting dropdown-toggle" data-toggle="dropdown"></p>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t(".edit"), edit_course_path(course) %></li>
+                  <li><%= link_to t(".delete"), course, method: :delete,
+                    data: {confirm: t("sure?")} %></li>
+                </ul>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="row">
