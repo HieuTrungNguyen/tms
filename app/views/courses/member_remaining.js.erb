@@ -1,2 +1,3 @@
-$("#modal-add-member").html('<%= j(render "courses/modal_add_member", remain_users: @users) %>');
+$("#modal-add-member").html('<%= j(render "courses/modal_add_member",
+  remain_users: @remain_users) %>');
 $("#modal-add-member").modal();

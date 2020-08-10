@@ -3,7 +3,7 @@ class CreateCouses < ActiveRecord::Migration[6.0]
     create_table :couses do |t|
       t.string :name
       t.text :description
-      t.integer :time_training
+      t.integer :time_training, default: 0, null: false
 
       t.timestamps
     end

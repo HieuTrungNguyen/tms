@@ -20,6 +20,12 @@ en:
     duration: "Duration"
     courseCover: "Course Cover"
     content: "Content"
+    created: "Created"
+    hours: "hours"
+    view: "View"
+    remove: "Remove"
+    close: "Close"
+    add: "Add"
 
   roles:
     supervisor: "Supervisor"
@@ -39,7 +45,6 @@ en:
 
   courses:
     course:
-      hour: "hours"
       view_more: "View more.."
       edit: "Edit"
       delete: "Delete"
@@ -48,10 +53,11 @@ en:
       member: "Member"
       tasks: "Tasks"
       add_member: "Add member"
+      add_subject: "Add Subject"
     modal_add_member:
       title_add_member: "Add Member In Course"
-      close: "Close"
-      add: "Add"
+    modal_add_subject:
+      title_add_subject: "Add Subject In Course"
     index:
       courses_title: "All Courses"
       btn_addCourse: "Add New Couse"
@@ -65,7 +71,6 @@ en:
       join: "Join"
       joined_people: "people who have taken this course"
       time_complete: "Time to Complete"
-      hours: "Hours"
       prerequisites: "Prerequisites"
       none: "None"
     edit:

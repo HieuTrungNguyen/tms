@@ -48,17 +48,6 @@
       h3.time {
         margin-top: 0;
       }
-      div.dropdown {
-        p.setting {
-          padding            : 2rem 1.5rem;
-          background-image   : url(setting.png);
-          background-position: center;
-          background-size    : 2.6rem 2.6rem;
-          background-repeat  : no-repeat;
-          float              : right;
-          cursor             : pointer;
-        }
-      }
     }
   }
 }
@@ -66,6 +55,16 @@
   width       : 10rem;
   float       : right;
   margin-right: 1.5rem;
+}
+/* Icon Dropdown */
+p.setting {
+  padding            : 2rem 1.5rem;
+  background-image   : url(setting.png);
+  background-position: center;
+  background-size    : 2.6rem 2.6rem;
+  background-repeat  : no-repeat;
+  float              : right;
+  cursor             : pointer;
 }
 
 /* Show Course */
@@ -117,8 +116,8 @@
 }
 .course-details {
   margin-top: 3rem;
-  .overviews {
-    ul li a {
+  div.overviews {
+    ul.nav.nav-tabs li a {
       font-size: 2rem;
       &:hover {
         text-decoration: underline;
@@ -178,10 +177,10 @@
 }
 
 /* Detail Show Course */
-.detail-course {
+div.detail-course {
   padding: 1rem 1.5rem 0;
   ul.nav.nav-tabs li a {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
   div.tab-content {
     div#subjects {
@@ -210,10 +209,16 @@
             margin-top    : 0;
             text-transform: capitalize;
             font-weight   : 600;
+            span.subject-time-training {
+              text-transform: none;
+            }
           }
-          p span.italic-text {
-            font-style : italic;
-            font-weight: 600;
+          p {
+            text-align: justify;
+            span.italic-text {
+              font-style : italic;
+              font-weight: 600;
+            }
           }
         }
       }
@@ -221,8 +226,8 @@
   }
 }
 
-/* Add Member to Course */
-a.link-add-member {
+/* Add Member, Subject to Course */
+a.link-add-member, a.link-add-subject {
   margin-bottom: 1.5rem;
 }
 
@@ -236,7 +241,14 @@ a.link-add-member {
   padding         : 1.5rem;
 }
 .user-card {
-  min-height: 10rem !important;
+  min-height   : 10rem !important;
+  box-shadow   : 1px 1px 1px #adadad;
+  border       : 1px solid #D9D9D9;
+  border-radius: 5px;
+  transition   : 0.5s;
+  &:hover {
+    box-shadow: 3px 5px 3px #adadad;
+  }
   div.media {
     padding: 1rem;
     div.checkbox-user-card {
@@ -260,26 +272,41 @@ a.link-add-member {
   }
 }
 
-/* Add Member To Course*/
-.media-add-member {
+/* Add Member, Subject To Course*/
+.media-add-member, .media-add-subject {
   margin-left: 0;
 }
-.add-member-card {
-  div.checkbox-user-card {
-    input[type="checkbox"] {
-      position: absolute;
-      top     : 2rem;
-    }
+.add-member-card, .add-subject-card {
+  height       : 15rem;
+  overflow     : hidden;
+  box-shadow   : 1px 1px 1px #adadad;
+  border       : 1px solid #D9D9D9;
+  border-radius: 5px;
+  transition   : 0.5s;
+  &:hover {
+    box-shadow: 3px 5px 3px #adadad;
   }
-  div.media-container {
-    margin-left: 3rem;
-    h4.media-heading {
-      color     : #397c5f;
-      font-style: italic;
-      height: 3rem;
-    }
-    p {
-      text-transform: capitalize;
+}
+div.checkbox-user-card, div.checkbox-subject-card {
+  input[type="checkbox"] {
+    position: absolute;
+    top     : 4.5rem;
+  }
+}
+div.media-container {
+  margin-left: 3rem;
+  padding    : 1rem;
+  h4.media-heading {
+    color         : #397c5f;
+    font-style    : italic;
+    text-transform: capitalize;
+    margin-bottom : 1rem;
+  }
+  p.media-text {
+    text-transform: capitalize;
+    span.italic-text {
+      font-style : italic;
+      font-weight: 600;
     }
   }
 }
