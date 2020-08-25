@@ -21,6 +21,13 @@ en:
     courseCover: "Course Cover"
     content: "Content"
 
+  btn:
+    continue: "Continue"
+  nav:
+    courses: "Courses"
+    message: "Message"
+    profile: "Profile"
+
   roles:
     supervisor: "Supervisor"
     trainee: "Trainee"
@@ -104,6 +111,15 @@ en:
     create:
       invalid: "Invalid email/password combination. Try again!"
 
+  trainee:
+    users:
+      show:
+        activity: "Activity"
+        joined_courses: "Joined Courses"
+        completed_courses: "Completed Courses"
+        uncompleted_courses: "Uncompleted Courses"
+        social_media: "Social Media"
+
   users:
     user:
       show: "Show"
@@ -116,6 +132,12 @@ en:
     index:
       index_title: "Users"
       btn_addUser: "Add New User"
+    show:
+      activity: "Activity"
+      joined_courses: "Joined Courses"
+      completed_courses: "Completed Courses"
+      uncompleted_courses: "Uncompleted Courses"
+      social_media: "Social Media"
     edit:
       save: "Save changes"
       edit_title: "Edit Your Profile"

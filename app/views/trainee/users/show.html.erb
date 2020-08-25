@@ -1,1 +1,80 @@
-<h2><%= @user.name %></h2>
+<div class="row user-profile">
+  <div class="col-md-3">
+    <div class="panel-group activity-status">
+      <div class="panel panel-success activity">
+        <div class="panel panel-heading activity__heading">
+          <%= t ".activity" %> <i class="fa fa-dashboard fa-1x"></i>
+        </div>
+        <div class="panel-body activity__body">
+          <p class="text-right">
+            <span class="pull-left"><strong><%= t ".total_courses" %>:</strong></span>
+            <%= @user.courses.count %>
+          </p>
+          <p class="text-right body__last-text">
+            <span class="pull-left"><strong><%= t ".completed_courses" %>:</strong></span>
+            <%= @finished_courses.size %>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-info social-media">
+        <div class="panel-heading social-media__heading"><%= t ".social_media" %></div>
+        <div class="panel-body social-media__body">
+          <ul class="body__media-info">
+            <li>
+              <a href="" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+            </li>
+            <li>
+              <a href="" title="Github"><i class="fa fa-github fa-2x"></i></a>
+            </li>
+            <li>
+              <a href="" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+            </li>
+            <li>
+              <a href="" title="Pinterest"><i class="fa fa-pinterest fa-2x"></i></a>
+            </li>
+            <li>
+              <a href="" title="Google+"><i class="fa fa-google-plus fa-2x"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#courses"><%= t "nav.courses" %></a></li>
+      <li><a data-toggle="tab" href="#message"><%= t "nav.message" %></a></li>
+      <li><a data-toggle="tab" href="#profile"><%= t "nav.profile" %></a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="courses" class="tab-pane fade in active">
+        <div class="panel-group">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+            <%= t ".completed_courses" %>
+            <span class="badge"><%= @finished_courses.size %></span>
+          </div>
+            <div class="panel-body">
+              <%= render partial: "common/course_of_user",
+                collection: @finished_courses, as: :course %>
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+            <%= t ".uncompleted_courses" %>
+            <span class="badge"><%= @unfinished_courses.size %></span>
+          </div>
+            <div class="panel-body">
+              <%= render partial: "common/course_of_user",
+                collection: @unfinished_courses, as: :course %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="message" class="tab-pane fade in"></div>
+      <div id="profile" class="tab-pane fade in">
+        <%= render "profiles/profile_info" %>
+      </div>
+    </div>
+  </div>
+</div>
