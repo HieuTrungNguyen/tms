@@ -116,6 +116,81 @@
   text-transform: capitalize;
 }
 
+/* Show User */
+.last-child-text--margin-0 {
+  margin: 0;
+}
+ul.contact-info {
+  padding: 0;
+  li {
+    list-style-type: none;
+    float: left;
+    padding-right: 11px;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  li a i.fa-facebook-square {
+    color: #4064ac;
+  }
+  li a i.fa-github {
+    color: #24292e;
+  }
+  li a i.fa-twitter {
+    color: #1c9cea;
+  }
+  li a i.fa-pinterest {
+    color: #df0022;
+  }
+  li a i.fa-google-plus {
+    color: #d54836;
+  }
+}
+.course-item-of-user {
+  height: 12rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: auto 0;
+  margin-bottom: 1rem;
+  padding: 5px 1rem;
+  box-shadow: 2px 1px 5px 1px #ccc, 0 3px 1px 0 #ccc;
+  transition : all 0.4s;
+  &:hover {
+    box-shadow: 4px 4px 5px 1px #ccc, 0 3px 1px 0 #ccc;
+  }
+  .course-cover {
+    img.course-img {
+      height: 5rem;
+      width: auto;
+      border-radius: 10px;
+    }
+    p.course-duration {
+      float: right;
+      font-size: 2rem;
+      font-style: italic;
+      position: relative;
+      top: 5px;
+      right: 1rem;
+    }
+  }
+  .course-info {
+    padding-top: 1rem;
+    h4.course-name {
+      text-transform: capitalize;
+      display: inline-block;
+    }
+    a.btn-continue-course {
+      float: right;
+      display: inline-block;
+    }
+  }
+}
+
+/* Show User Profile */
+.user-profile {
+  padding-top: 2rem;
+}
+
 /* btn Add New Member for Course & User */
 .btn-add-member {
   margin-bottom: 2rem;

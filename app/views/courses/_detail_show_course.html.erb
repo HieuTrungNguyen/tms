@@ -33,7 +33,8 @@
                 <span class="badge supervisors-count"><%= @supervisors.size %></span>
               </div>
               <div class="panel-body panel-supervisors">
-                <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
+                <%= render partial: "common/user_of_course",
+                  collection: @supervisors, as: :user %>
               </div>
             </div>
           </div>
@@ -44,7 +45,8 @@
                 <span class="badge trainees-count"><%= @trainees.size %></span>
               </div>
               <div class="panel-body panel-trainees">
-                <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+                <%= render partial: "common/user_of_course",
+                  collection: @trainees, as: :user %>
               </div>
             </div>
           </div>

@@ -1,1 +1,64 @@
-<h2><%= @user.name %></h2>
+<div class="row user-profile">
+  <div class="col-md-3">
+    <div class="panel-group">
+      <div class="panel panel-success">
+        <div class="panel panel-heading">Activity <i class="fa fa-dashboard fa-1x"></i></div>
+        <div class="panel-body">
+          <p class="text-right">
+            <span class="pull-left"><strong>Total Courses:</strong></span>
+            <%= @user.courses.count %>
+          </p>
+          <p class="text-right last-child-text--margin-0">
+            <span class="pull-left"><strong>Finished Courses:</strong></span>
+            <%= @finished_courses.size %>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Social Media</div>
+        <div class="panel-body">
+          <ul class="contact-info">
+            <li><a href=""><i class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li><a href=""><i class="fa fa-github fa-2x"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+            <li><a href=""><i class="fa fa-google-plus fa-2x"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="courses">Courses</a></li>
+      <li><a data-toggle="tab" href="#message">Message</a></li>
+      <li><a data-toggle="tab" href="#setting">Setting</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="courses">
+        <div class="panel-group">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+            Finished Courses <span class="badge"><%= @finished_courses.size %></span>
+          </div>
+            <div class="panel-body">
+              <%= render partial: "common/course_of_user",
+                collection: @finished_courses, as: :course %>
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+            Unfinished Courses <span class="badge"><%= @unfinished_courses.size %></span>
+          </div>
+            <div class="panel-body">
+              <%= render partial: "common/course_of_user",
+                collection: @unfinished_courses, as: :course %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade in" id="message"></div>
+      <div class="tab-pane fade in" id="setting"></div>
+    </div>
+  </div>
+</div>

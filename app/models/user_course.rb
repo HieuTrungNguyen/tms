@@ -14,4 +14,8 @@ class UserCourse < ApplicationRecord
   scope :get_users_id_in_course, ->(course_id) do
     joins(:user).select("users.id").where(course_id: course_id)
   end
+  scope :get_courses_of_user_with_finished, ->(user_id, finished) do
+    UserCourse.joins(:course)
+      .select("courses.*").where(user_id: user_id).where(finished: finished)
+  end
 end

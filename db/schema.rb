@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_011426) do
+ActiveRecord::Schema.define(version: 2020_08_23_010738) do
 
   create_table "course_subjects", force: :cascade do |t|
     t.string "status"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_011426) do
   create_table "user_courses", force: :cascade do |t|
     t.string "status"
     t.datetime "date_join"
-    t.datetime "finished_at"
+    t.integer "finished", default: 0, null: false
     t.integer "user_id"
     t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false
