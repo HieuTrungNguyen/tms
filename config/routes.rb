@@ -30,4 +30,6 @@ Rails.application.routes.draw do
       get :add_member
     end
   end
+
+  resources :subjects
 end

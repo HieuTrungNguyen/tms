@@ -13,13 +13,13 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_supervisor!
-    return if current_user.supervisor?
+    return if current_user&.supervisor?
     flash[:danger] = t "role"
-    redirect_to root_path
+    redirect_to current_user
   end
 
   def load_subjects_in_course
-    @subjects = CourseSubject.get_subjects_in_course @course.id
+    @subjects = @course.subjects
   end
 
   def load_supervisors_in_course

@@ -4,13 +4,18 @@
       <%= image_tag "default_course_cover.png", class: "subject_cover" %>
     </div>
     <div class="col-md-9">
-      <div class="content-subject">
+      <div class="subject-detail">
         <h4><%= link_to subject.name, "#" %></h4>
         <p>
           <span class="italic-text"><%= t "form.description" %>:</span>
           <%= subject.description %>
         </p>
-        <p>
+        <p class="js-show-content">
+          <button type="button" class="btn btn-sm btn-info js-show-content__link">
+            <%= t ".show_more" %>
+          </button>
+        </p>
+        <p class="subject-content hidden">
           <span class="italic-text"><%= t "form.content" %>:</span>
           <%= subject.content %>
         </p>
