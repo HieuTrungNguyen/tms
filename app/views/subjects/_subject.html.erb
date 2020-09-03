@@ -1,0 +1,25 @@
+<div class="col-md-4">
+  <div class="subject-item">
+    <div class="subject-item__cover">
+      <%= image_tag set_object_img(subject.cover, Settings.subject.default_cover),
+        class: "subject-item__subject-cover img-rounded img-responsive" %>
+    </div>
+    <div class="subject-item__content">
+      <div class="content-name">
+        <h4 class="content-name__name"><%= subject.name %></h4>
+        <p class="content-name__joined-date">
+          <%= l subject.created_at, format: "%d/%m/%Y" %>
+        </p>
+      </div>
+      <p class="content-descript">
+        <span class="content-descript__tag"><%= t "form.description" %>: </span>
+        <%= subject.description %>
+      </p>
+      <div>
+        <%= link_to t("courses.show.details"), "#",
+          class: "btn btn-info subject-detail-link" %>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>

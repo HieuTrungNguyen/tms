@@ -32,4 +32,9 @@ $(document).on('turbolinks:load', function() {
       });
     }
   });
+
+  /* Show Content in subjects of course */
+  $('body').on('click', '.js-show-content__link', function(event) {
+    $(this).parent().parent().find('.subject-content').toggleClass('hidden');
+  });
 });

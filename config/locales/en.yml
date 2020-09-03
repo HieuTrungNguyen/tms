@@ -21,6 +21,9 @@ en:
     courseCover: "Course Cover"
     content: "Content"
 
+  btn:
+    show_more: "Show more..."
+
   roles:
     supervisor: "Supervisor"
     trainee: "Trainee"
@@ -103,6 +106,10 @@ en:
       signup_now: "Sign up now!"
     create:
       invalid: "Invalid email/password combination. Try again!"
+
+  subjects:
+    index:
+      subjects-title: "All Subjects"
 
   users:
     user:
