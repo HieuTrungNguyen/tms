@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 2020_09_02_033206) do
     t.string "cover"
   end
 
+<<<<<<< HEAD
+# Could not dump table "subjects" because of following StandardError
+#   Unknown type 'ingeter' for column 'time_training'
+=======
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -40,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_033206) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover"
   end
+>>>>>>> master
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
@@ -53,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_033206) do
   create_table "user_courses", force: :cascade do |t|
     t.string "status"
     t.datetime "date_join"
-    t.datetime "finished_at"
+    t.integer "finished", default: 0, null: false
     t.integer "user_id"
     t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false

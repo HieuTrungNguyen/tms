@@ -24,29 +24,33 @@ end
 20.times do
   name          = Faker::Lorem.word + " " + Faker::Lorem.word
   description   = Faker::Lorem.paragraph sentence_count: 10
-  time_training = Faker::Number.number digits: 2
   Course.create! name: name,
                  description: description,
-                 time_training: time_training
+                 time_training: 0
 end
 
 15.times do
-  name        = Faker::Lorem.word + " " + Faker::Lorem.word
-  description = Faker::Lorem.paragraph sentence_count: 4
-  content     = Faker::Lorem.paragraph sentence_count: 10
+  name          = Faker::Lorem.word + " " + Faker::Lorem.word
+  description   = Faker::Lorem.paragraph sentence_count: 4
+  content       = Faker::Lorem.paragraph sentence_count: 10
+  time_training = rand(20..60)
   Subject.create! name: name,
                   description: description,
-                  content: content
+                  content: content,
+                  time_training: time_training
 end
 
 courses = Course.all
 courses.each do |course|
+  time_training_of_course = course.time_training
   subjects = Subject.all.sample(rand(5..10))
   subjects.each do |subject|
+    time_training_of_course += subject.time_training
     CourseSubject.create! course_id: course.id,
                           subject_id: subject.id,
                           status: "open"
   end
+  course.update! time_training: time_training_of_course
 end
 
 courses.each do |course|
@@ -56,6 +60,6 @@ courses.each do |course|
                        course_id: course.id,
                        status: "active",
                        date_join: Time.zone.now,
-                       finished_at: Time.zone.parse('2020-08-31 23:59:59')
+                       finished_at: Time.zone.now + 30*24*3600
   end
 end
