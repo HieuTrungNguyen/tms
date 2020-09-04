@@ -8,7 +8,11 @@ user:
   supervisor: "supervisor"
   trainee: "trainee"
   default_per_page: 10
+
 course:
   default_cover: "default_course_cover.png"
   finished: 1
   unfinished: 0
+
+subject:
+  default_cover: "default_subject_cover.png"

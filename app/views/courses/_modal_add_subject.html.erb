@@ -2,18 +2,18 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title"><%= t ".title_add_member" %></h4>
+      <h4 class="modal-title"><%= t ".title_add_subject" %></h4>
     </div>
     <div class="modal-body">
-      <%= render partial: "common/users_not_exist_in_course",
-        collection: remain_users, as: :user %>
+      <%= render partial: "common/subject_not_exist_in_course",
+        collection: @remain_subjects, as: :subject %>
     </div>
     <div class="clearfix"></div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">
         <%= t "form.close" %>
       </button>
-      <button type="button" class="btn btn-primary btn-add-member">
+      <button type="button" class="btn btn-primary btn-add-subject">
         <%= t "form.add" %>
       </button>
     </div>

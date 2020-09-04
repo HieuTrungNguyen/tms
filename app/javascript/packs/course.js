@@ -6,12 +6,12 @@ $(document).on('turbolinks:load', function() {
 
     listCB.each(function(index, el) {
       if(el.checked) {
-        var idUser = $(el).parent().next().next().find('input[type="hidden"]').val();
+        var idUser = $(el).parent().parent().find('input[type="hidden"]').val();
         usersChecked.push(idUser);
       }
     });
     if(usersChecked.length == 0) {
-      alert(I18n.t("Choose member to add, please!"));
+      alert("Choose member to add, please!");
     } else {
       $.ajax({
         url: '/courses/add_member',
@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function() {
         },
         success: function(data) {
           if(data.status == 404) {
-            alert(I18n.t("Course not found."));
+            alert("Course not found.");
           } else if(data.status == 403) {
             alert("User don't exist.");
           } else {
@@ -31,5 +31,41 @@ $(document).on('turbolinks:load', function() {
         }
       });
     }
+  });
+  $('body').on('click', '.btn-add-subject', function(event) {
+    var listSubject = $('.subject-remaining');
+    var subjectsChecked = [];
+    var courseId = $('#course-id').val();
+    listSubject.each(function(index, el) {
+      if(el.checked) {
+        var idSubject = $(el).parent().parent().find('input[type="hidden"]').val();
+        subjectsChecked.push(idSubject);
+      }
+    });
+    if(subjectsChecked.length == 0) {
+      alert("Please choose subject to add!");
+    } else {
+      $.ajax({
+        url: '/courses/add_subject',
+        method: 'GET',
+        data: {
+          subjectsChecked: subjectsChecked,
+          courseId: courseId
+        },
+        success: function(data) {
+          if(data.status == 404) {
+            alert("Course not found.");
+          } else if(data.status == 403) {
+            alert("Subject don't exist.");
+          } else {
+            alert("Add subject to course successfully!");
+          }
+        }
+      });
+    }
+
+  /* Show Content in subjects of course */
+  $('body').on('click', '.js-show-content__link', function(event) {
+    $(this).parent().parent().find('.subject-content').toggleClass('hidden');
   });
 });
