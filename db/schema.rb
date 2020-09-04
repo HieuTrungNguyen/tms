@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_010738) do
+ActiveRecord::Schema.define(version: 2020_09_02_033206) do
 
   create_table "course_subjects", force: :cascade do |t|
     t.string "status"
@@ -32,8 +32,19 @@ ActiveRecord::Schema.define(version: 2020_08_23_010738) do
     t.string "cover"
   end
 
+<<<<<<< HEAD
 # Could not dump table "subjects" because of following StandardError
 #   Unknown type 'ingeter' for column 'time_training'
+=======
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "cover"
+  end
+>>>>>>> master
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"

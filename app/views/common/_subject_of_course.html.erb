@@ -4,6 +4,7 @@
       <%= image_tag "default_course_cover.png", class: "subject_cover" %>
     </div>
     <div class="col-md-9">
+<<<<<<< HEAD
       <div class="content-subject">
         <h4>
           <%= link_to subject.name, "#" %>
@@ -11,11 +12,20 @@
             (<%= subject.time_training %> <%= t "form.hours" %>)
           </span>
         </h4>
+=======
+      <div class="subject-detail">
+        <h4><%= link_to subject.name, "#" %></h4>
+>>>>>>> master
         <p>
           <span class="italic-text"><%= t "form.description" %>:</span>
           <%= subject.description %>
         </p>
-        <p>
+        <p class="js-show-content">
+          <button type="button" class="btn btn-sm btn-info js-show-content__link">
+            <%= t ".show_more" %>
+          </button>
+        </p>
+        <p class="subject-content hidden">
           <span class="italic-text"><%= t "form.content" %>:</span>
           <%= subject.content %>
         </p>

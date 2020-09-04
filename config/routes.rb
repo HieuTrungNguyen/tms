@@ -32,4 +32,6 @@ Rails.application.routes.draw do
       get :add_subject
     end
   end
+
+  resources :subjects
 end
