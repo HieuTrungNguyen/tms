@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :authenticate_supervisor!, only: %i(index destroy)
   before_action :load_user, except: %i(new create index)
   before_action :correct_user, only: %i(show edit update)
+  before_action :load_finished_courses_of_user,
+                :load_unfinished_courses_of_user, only: %i(show)
 
   def new
     @user = User.new

@@ -29,4 +29,14 @@ class ApplicationController < ActionController::Base
   def load_trainees_in_course
     @trainees = UserCourse.get_users_in_course_with_role @course.id, User.trainee
   end
+
+  def load_finished_courses_of_user
+    @finished_courses = UserCourse.get_courses_of_user_with_finished(@user.id,
+      Settings.course.finished)
+  end
+
+  def load_unfinished_courses_of_user
+    @unfinished_courses = UserCourse.get_courses_of_user_with_finished(@user.id,
+      Settings.course.unfinished)
+  end
 end

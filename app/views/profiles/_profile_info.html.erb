@@ -1,0 +1,84 @@
+<div class="row user-profile">
+  <div class="user-profile__header">
+    <h1 class="header__header-title">Personal Info</h1>
+    <p class="header__header-text">Basic info, like your name and photo, that you use on TMS App</p>
+  </div>
+  <div class="user-profile__section">
+    <div class="section-header">
+      <h2 class="section-header__title">Profile</h2>
+      <p class="section-header__descript">Some info may be visible to other people using App. <a href="#" class="link-more-descript">Learn more</a></p>
+    </div>
+    <div class="section-item section-avatar">
+      <div class="section-content">
+        <div class="section-content__label">
+          <label class="info-label" for="avatar">Photo</label>
+        </div>
+        <div class="section-content__info">
+          <p class="info-descript info-photo">A photo helps personalize your account</p>
+          <%= image_tag set_avatar(@user), class: "img-descript__avatar" %>
+        </div>
+      </div>
+    </div>
+    <div class="section-item section-name">
+      <div class="section-content">
+        <div class="section-content__label">
+          <label class="info-label" for="name">Name</label>
+        </div>
+        <div class="section-content__info">
+          <h4 class="info-detail info-name"><%= @user.name %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="section-item section-address">
+      <div class="section-content">
+        <div class="section-content__label">
+          <label class="info-label" for="address">Address</label>
+        </div>
+        <div class="sectin-content__info">
+          <h4 class="info-detail info-address"><%= @user.address %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="section-item section-role">
+      <div class="section-content">
+        <div class="section-content__label">
+          <label class="info-label" for="role">Role</label>
+        </div>
+        <div class="section-content__info">
+          <h4 class="info-detail info-role"><%= @user.role %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-profile__section">
+    <div class="header">
+      <h2 class="header-title">Contact Info</h2>
+    </div>
+    <div class="body">
+      <div class="email">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-md-9">
+            <h4 class=""><%= @user.email %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="phone-number">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="phone-number">Phone</label>
+          </div>
+          <div class="col-md-9">
+            <h4 class=""><%= @user.phone_number %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about">
+    <h2>Edit profile</h2>
+    <button>Edit</button>
+  </div>
+</div>

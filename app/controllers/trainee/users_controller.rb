@@ -1,5 +1,8 @@
 class Trainee::UsersController < Trainee::BasicApplicationController
   before_action :load_user
+  before_action :correct_user, only: %i(show edit update)
+  before_action :load_finished_courses_of_user,
+                :load_unfinished_courses_of_user, only: %i(show)
 
   def show; end
 
@@ -32,6 +35,6 @@ class Trainee::UsersController < Trainee::BasicApplicationController
   end
 
   def correct_user
-
+    redirect_to @user unless current_user?(@user)
   end
 end

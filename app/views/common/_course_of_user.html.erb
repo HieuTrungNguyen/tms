@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <div class="row course-item-of-user">
+    <div class="course-cover">
+      <%= image_tag set_object_img(course.cover, Settings.course.default_cover),
+        class: "course-cover__img img-thumbnail" %>
+      <p class="course-cover__duration">
+        <%= course.time_training %> <small><%= t "courses.show.hours" %></small>
+      </p>
+      <div class="clearfix"></div>
+    </div>
+    <div class="course-info">
+      <h4 class="course-info__name"><%= course.name %></h4>
+      <div>
+        <%= link_to t("btn.continue"), "#",
+          class: "btn btn-info btn-continue-course" %>
+      </div>
+    </div>
+  </div>
+</div>

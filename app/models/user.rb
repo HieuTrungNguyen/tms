@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :user_courses, dependent: :destroy
   has_many :user_tasks, dependent: :destroy
 
+  has_many :courses, through: :user_courses
+
   before_save {email.downcase!}
 
   mount_uploader :avatar, AvatarUploader
@@ -17,7 +19,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, :password_confirmation, presence: true,
     length: {minimum: Settings.user.min_pass_length,
-    maximum: Settings.max_text_length}
+    maximum: Settings.max_text_length}, allow_blank: true
   validates :phone_number, presence: true,
     length: {minimum: Settings.user.min_phone_number_length},
     format: {with: VALID_PHONE_NUMBER_REGEX}

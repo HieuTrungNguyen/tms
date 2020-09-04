@@ -54,12 +54,13 @@ courses.each do |course|
 end
 
 courses.each do |course|
-  users = User.all.sample(rand(5..30))
+  users = User.all.sample(rand(10..40))
   users.each do |user|
     UserCourse.create! user_id: user.id,
                        course_id: course.id,
                        status: "active",
                        date_join: Time.zone.now,
+                       finished: 0,
                        finished_at: Time.zone.now + 30*24*3600
   end
 end
