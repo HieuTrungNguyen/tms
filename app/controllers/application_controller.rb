@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
     @subjects = @course.subjects
   end
 
+  def load_tasks_in_subject
+    @tasks = @subject.tasks
+  end
+
   def load_supervisors_in_course
     @supervisors = UserCourse.get_users_in_course_with_role @course.id, User.supervisor
   end

@@ -29,9 +29,9 @@ en:
 
   btn:
     show_more: "Show more..."
-
-  btn:
     continue: "Continue"
+    learn: "Learn"
+
   nav:
     courses: "Courses"
     message: "Message"
@@ -52,6 +52,8 @@ en:
       created_fail: "Sign up failed. Try again!"
       update_success: "Updated profile successfully!"
       delete_success: "You're deleted this user successfully."
+    subjects:
+      not_find: "That subject don't find!"
 
   courses:
     course:
@@ -130,7 +132,7 @@ en:
 
   subjects:
     index:
-      subjects-title: "All Subjects"
+      subject_title: "All Subjects"
 
   users:
     user:

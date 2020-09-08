@@ -1,0 +1,41 @@
+<div class="subject-detail">
+  <div class="subject__container pull-left">
+    <div class="subject__cover">
+      <%= image_tag set_object_img(@subject.cover.url, Settings.subject.default_cover),
+        class: "subject__img img-rounded" %>
+    </div>
+    <div class="subject__info">
+      <div class="subject__name">
+        <h3 class="subject__sub-name"><%= @subject.name %></h3>
+        <p class="subject__duration">
+          <%= @subject.time_training %> <small><%= t "form.hours" %></small>
+        </p>
+      </div>
+      <p class="subject__joined-date"><%= format_date @subject.created_at %></p>
+      <p class="subject__description">
+        <span><%= t "form.description" %></span>: <%= @subject.description %>
+      </p>
+    </div>
+    <div class="subject__content">
+      <div class="panel panel-success">
+        <div class="panel-heading subject__heading-title"><%= t "form.content" %></div>
+        <div class="panel-body">
+          <p class="subject__body-content"><%= @subject.content %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="subject__tasks pull-right">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Tasks <span class="badge"><%= @subject.tasks.count %></span>
+      </div>
+      <div class="panel-body">
+        <div class="tasks-list list-group">
+          <%= render partial: "common/task_of_subject", collection: @tasks, as: :task %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
