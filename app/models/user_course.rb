@@ -2,8 +2,6 @@ class UserCourse < ApplicationRecord
   belongs_to :user
   belongs_to :course
 
-  enum status: {active: 0, close: 1}
-
   scope :get_users_in_course_with_role, ->(course_id, role) do
     get_users_in_course(course_id).merge(role)
   end

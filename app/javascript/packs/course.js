@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $('body').on('click', '.btn-add-member', function(event) {
+  $('body').on('click', '.btn__add-member', function(event) {
     var listCB = $('.user-remaining');
     var usersChecked = [];
     var courseId = $('#course-id').val();
@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function() {
       });
     }
   });
-  $('body').on('click', '.btn-add-subject', function(event) {
+  $('body').on('click', '.btn__add-subject', function(event) {
     var listSubject = $('.subject-remaining');
     var subjectsChecked = [];
     var courseId = $('#course-id').val();
@@ -63,7 +63,7 @@ $(document).on('turbolinks:load', function() {
         }
       });
     }
-
+  });
   /* Show Content in subjects of course */
   $('body').on('click', '.js-show-content__link', function(event) {
     $(this).parent().parent().find('.subject-content').toggleClass('hidden');

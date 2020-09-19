@@ -5,9 +5,12 @@
         <div class="checkbox checkbox-subject-card pull-left">
           <input type="checkbox" class="subject-remaining" value="">
         </div>
-        <div class="clearfix"></div>
         <div class="media-container">
           <h4 class="media-heading"><%= subject.name %></h4>
+          <p class="media-duration">
+            <span class="italic-text"><%= t "form.duration" %>: </span>
+            <%= subject.time_training %> <%= t "form.hours" %>
+          </p>
           <p class="media-text">
             <span class="italic-text"><%= t "form.created" %>: </span>
             <%= format_date subject.created_at %>

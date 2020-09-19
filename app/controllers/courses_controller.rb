@@ -4,6 +4,8 @@ class CoursesController < ApplicationController
   before_action :load_course_to_add_object, only: %i(add_member add_subject)
   before_action :load_subjects_in_course, :load_supervisors_in_course,
     :load_trainees_in_course, only: :show
+  before_action :update_time_training_of_course,
+    except: %i(index new create add_subject delete_subject)
 
   def index
     @courses = Course.all.order_desc.page(params[:page]).per 10
@@ -92,6 +94,7 @@ class CoursesController < ApplicationController
                                 subject_id: subject_id.to_i
 
         end
+        update_time_training_of_course
         load_subjects_in_course
       end
     rescue => e
@@ -100,6 +103,20 @@ class CoursesController < ApplicationController
       end
     end
     respond_to :js
+  end
+
+  def delete_subject
+    @subject_id = params[:subject_id]
+    @subject_of_course = CourseSubject.find_by course_id: @course.id,
+      subject_id: @subject_id
+    if @subject_of_course && @subject_of_course.destroy
+      update_time_training_of_course
+      load_subjects_in_course
+      respond_to :js
+    else
+      flash[:danger] = t "flash.courses.delete_subject_fail"
+      redirect_to @course
+    end
   end
 
   private
@@ -119,5 +136,9 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.json{render json: {status: 404}}
     end
+  end
+
+  def update_time_training_of_course
+    @course.time_training_of_course
   end
 end

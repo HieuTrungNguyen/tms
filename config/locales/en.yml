@@ -47,6 +47,7 @@ en:
       add_fail: "Add new course failed. Try again!"
       update_course: "%{name}'s Course is updated!"
       delete_course: "%{name}'s Course is deleted!"
+      delete_subject_fail: "You don't delete this at now. Try again!"
     users:
       created_success: "Create account successfully!"
       created_fail: "Sign up failed. Try again!"
