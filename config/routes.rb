@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get :edit_profile
       get :member_remaining
       get :subject_remaining
+      get :delete_subject
     end
     collection do
       get :add_member

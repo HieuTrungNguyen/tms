@@ -102,6 +102,19 @@ class CoursesController < ApplicationController
     respond_to :js
   end
 
+  def delete_subject
+    @subject_id = params[:subject_id]
+    @subject_of_course = CourseSubject.find_by course_id: @course.id, subject_id: @subject_id
+    if @subject_of_course && @subject_of_course.destroy
+      @course.update! time_training: @course.time_training_of_course
+      load_subjects_in_course
+      respond_to :js
+    else
+      flash[:danger] = "Not delete at now!"
+      redirect_to @course
+    end
+  end
+
   private
   def course_params
     params.require(:course).permit :name, :description, :time_training, :cover
@@ -120,4 +133,6 @@ class CoursesController < ApplicationController
       format.json{render json: {status: 404}}
     end
   end
+
+
 end

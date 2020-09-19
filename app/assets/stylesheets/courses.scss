@@ -184,6 +184,7 @@ div.detail-course {
   }
   div.tab-content {
     div#subjects {
+      /* Subject of Course*/
       .item-subject {
         background-color: #effafb;
         box-shadow      : 1px 1px 1px #adadad;
@@ -255,6 +256,8 @@ a.link-add-member, a.link-add-subject {
       margin-top: 0;
     }
     div.media-container {
+      border-bottom: 1px solid rgba(204, 204, 204, 0.7);
+      margin-bottom: 5px;
       .media-heading img.media-object-user {
         height: 6rem;
         width : 6rem;

@@ -46,7 +46,10 @@
       <div>
         <dl class="timeTraining">
           <dt><%= t ".time_complete" %></dt>
-          <dd><%= @course.time_training %> <%= t "form.hours" %></dd>
+          <dd>
+            <span class="course__time-training"><%= @course.time_training %></span>
+            <%= t "form.hours" %>
+          </dd>
         </dl>
         <dl class="prerequisites">
           <dt><%= t ".prerequisites" %></dt>

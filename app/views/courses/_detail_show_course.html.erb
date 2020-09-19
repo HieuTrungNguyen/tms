@@ -37,8 +37,8 @@
           </div>
           <div class="clearfix"></div>
         <% end %>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="users-of-course">
+          <div class="supervisors-list">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <%= t "roles.supervisor" %>
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="trainees-list">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <%= t "roles.trainee" %>
@@ -75,5 +75,3 @@
     <div class="modal fade" id="modal-add-subject"></div>
   </div>
 </div>
-
-<%= javascript_pack_tag "course" %>
