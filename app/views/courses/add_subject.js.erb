@@ -1,4 +1,4 @@
-$('.course-subjects-count').html('<%= @subjects.size %>');
-$('.subject_of_course').html('<%= j(render partial: "common/subject_of_course",
+$('.js-nav__course-subjects-count').html('<%= @subjects.size %>');
+$('.js-subjects-of-course').html('<%= j(render partial: "common/subject_of_course",
     collection: @subjects, as: :subject) %>');
 $('#modal-add-subject').modal('toggle');

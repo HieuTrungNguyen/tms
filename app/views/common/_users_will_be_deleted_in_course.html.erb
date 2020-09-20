@@ -1,0 +1,18 @@
+<div class="col-md-6">
+  <div class="list-group">
+    <div class="list-group-item member-card">
+      <div class="row media-member">
+        <div class="checkbox checkbox-user-card pull-left">
+          <input type="checkbox" class="member__selected js-member__selected" value="">
+        </div>
+        <div class="clearfix"></div>
+        <div class="media-container">
+          <h4 class="media-heading"><%= user.name %></h4>
+          <p><%= user.email %></p>
+          <p class="media-text"><%= user.role %></p>
+          <input type="hidden" value="<%= user.id %>">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,10 +26,13 @@ Rails.application.routes.draw do
       get :edit_profile
       get :member_remaining
       get :subject_remaining
+      get :delete_one_member
+      get :select_users_to_be_deleted
     end
     collection do
       get :add_member
       get :add_subject
+      get :delete_more_member
     end
   end
 

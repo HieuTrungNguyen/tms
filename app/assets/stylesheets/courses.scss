@@ -138,12 +138,12 @@ p.setting {
       border       : 1px solid #eaeaea;
       margin-bottom: 5rem;
       text-align   : center;
-      p {
+      .joined-member {
         padding      : 2.5rem;
         font-size    : 2rem;
         color        : #19191a;
         border-bottom: 1px solid #eaeaea;
-        span.joined_member {
+        .course__users-count {
           font-size  : 4rem;
           font-weight: 600;
           margin     : 1rem 0 0;
@@ -251,16 +251,13 @@ a.link-add-member, a.link-add-subject {
   }
   div.media {
     padding: 1rem;
-    div.checkbox-user-card {
-      margin-top: 0;
-    }
-    div.media-container {
+    div.media__content {
+      margin-left: 0;
       .media-heading img.media-object-user {
         height: 6rem;
         width : 6rem;
       }
       .media-body {
-        padding-left: 1rem;
         h4.media-username {
           font-size: 1.6rem;
         }
@@ -273,10 +270,10 @@ a.link-add-member, a.link-add-subject {
 }
 
 /* Add Member, Subject To Course*/
-.media-add-member, .media-add-subject {
+.media-add-member, .media-add-subject, .media-member {
   margin-left: 0;
 }
-.add-member-card, .add-subject-card {
+.add-member-card, .add-subject-card, .member-card {
   height       : 15rem;
   overflow     : hidden;
   box-shadow   : 1px 1px 1px #adadad;

@@ -1,7 +1,9 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, :authenticate_supervisor!, except: %i(index show)
-  before_action :load_course, except: %i(index new create add_member add_subject)
-  before_action :load_course_to_add_object, only: %i(add_member add_subject)
+  before_action :load_course, except: %i(index new create add_member
+    add_subject delete_more_member)
+  before_action :load_course_to_add_or_delete_object,
+    only: %i(add_member add_subject delete_more_member)
   before_action :load_subjects_in_course, :load_supervisors_in_course,
     :load_trainees_in_course, only: :show
 
@@ -53,7 +55,7 @@ class CoursesController < ApplicationController
   end
 
   def member_remaining
-    @remain_users = User.get_users_not_exist_in_course(@course.id)
+    @remain_users = User.get_users_not_exist_in_course @course.id
     respond_to :js
   end
 
@@ -78,8 +80,46 @@ class CoursesController < ApplicationController
     respond_to :js
   end
 
+  def delete_one_member
+    @user_id = params[:user_id]
+    @user_of_course = UserCourse.find_by user_id: @user_id, course_id: @course.id
+    if @user_of_course && @user_of_course.destroy
+      load_supervisors_in_course
+      load_trainees_in_course
+      respond_to :js
+    else
+      flash[:danger] = t "flash.courses.delete_member_fail"
+      redirect_to @course
+    end
+  end
+
+  def select_users_to_be_deleted
+    @users = @course.users
+    respond_to :js
+  end
+
+  def delete_more_member
+    selected_user_ids = params[:selectedUserIds]
+    begin
+      UserCourse.transaction do
+        selected_user_ids.each do |user_id|
+          @user_of_course = UserCourse.find_by course_id: @course.id, user_id: user_id
+          if @user_of_course && @user_of_course.destroy
+            load_supervisors_in_course
+            load_trainees_in_course
+          end
+        end
+      end
+    rescue => e
+      respond_to do |format|
+        format.json{render json: {status: 403}}
+      end
+    end
+    respond_to :js
+  end
+
   def subject_remaining
-    @remain_subjects = Subject.get_subjects_not_exist_in_course(@course.id)
+    @remain_subjects = Subject.get_subjects_not_exist_in_course @course.id
     respond_to :js
   end
 
@@ -112,7 +152,7 @@ class CoursesController < ApplicationController
     redirect_to courses_path unless @course
   end
 
-  def load_course_to_add_object
+  def load_course_to_add_or_delete_object
     course_id = params[:courseId]
     @course = Course.find_by id: course_id
     return if @course.present?
