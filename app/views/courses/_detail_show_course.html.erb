@@ -2,7 +2,9 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#subjects">
       <%= t ".subjects" %>
-      <span class="badge course-subjects-count"><%= @course.subjects.count %></span>
+      <span class="badge course__subjects-count js-course__subjects-count">
+        <%= @course.subjects.count %>
+      </span>
     </a></li>
     <li><a data-toggle="tab" href="#member">
       <%= t ".member" %>
@@ -23,7 +25,7 @@
           </div>
           <div class="clearfix"></div>
         <% end %>
-        <div class="subject_of_course">
+        <div class="subject-of-course">
           <%= render partial: "common/subject_of_course",
             collection: @subjects, as: :subject %>
         </div>
@@ -37,8 +39,8 @@
           </div>
           <div class="clearfix"></div>
         <% end %>
-        <div class="row">
-          <div class="col-md-6">
+        <div class="users-of-course">
+          <div class="supervisors-list">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <%= t "roles.supervisor" %>
@@ -50,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="trainees-list">
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <%= t "roles.trainee" %>
@@ -75,5 +77,3 @@
     <div class="modal fade" id="modal-add-subject"></div>
   </div>
 </div>
-
-<%= javascript_pack_tag "course" %>

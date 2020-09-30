@@ -60,7 +60,6 @@ courses.each do |course|
                        course_id: course.id,
                        status: "active",
                        date_join: Time.zone.now,
-                       finished: 0,
-                       finished_at: Time.zone.now + 30*24*3600
+                       finished: 0
   end
 end

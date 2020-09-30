@@ -2,7 +2,7 @@
   <h1 class="courses-title"><%= t ".courses_title" %></h1>
   <% if current_user&.supervisor? %>
     <div class="add-member">
-      <%= link_to t(".btn_addCourse"), new_course_path, class: "btn-add-member btn btn-info" %>
+      <%= link_to t(".btn_addCourse"), new_course_path, class: "add-member__btn btn btn-info" %>
     </div>
   <% end %>
   <div class="list-group">
