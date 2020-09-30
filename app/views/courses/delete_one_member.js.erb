@@ -1,0 +1,7 @@
+alert('That member is deleted successfully!');
+$('.js-course__users-count').html('<%= @course.users.count %>');
+$('.js-nav__course-users-count').html('<%= @course.users.count %>');
+$('.js-supervisors-count').html('<%= @supervisors.size %>');
+$('.js-trainees-count').html('<%= @trainees.size %>');
+$('.js-course__user-<%= @user_id %>').remove();
+

@@ -38,9 +38,11 @@
   </div>
   <div class="col-md-4 more-inform">
     <aside class="inform-sidebar">
-      <p>
+      <p class="joined-member">
         <%= t ".join" %>
-        <span class="joined_member course-users-count"><%= @course.users.count %></span>
+        <span class="course__users-count js-course__users-count">
+          <%= @course.users.count %>
+        </span>
         <%= t ".joined_people" %>
       </p>
       <div>
