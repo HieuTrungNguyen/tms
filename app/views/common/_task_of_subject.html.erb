@@ -1,0 +1,26 @@
+<div class="list-group-item task-item">
+  <div class="task__detail subject__task-<%= task.id %>">
+    <div class="task__datetime pull-right">
+      <span class="label label-info">
+        <%= format_date task.created_at %>
+      </span>
+    </div>
+    <div class="task__info pull-left">
+      <h3 class="task__name"><%= link_to task.name, "#" %></h3>
+      <p class="task__descript"><%= task.description %></p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="task__action">
+    <div class="task__learn pull-left">
+      <%= link_to t("btn.learn"), "#", class: "btn btn-primary btn__learn" %>
+    </div>
+    <% if current_user&.supervisor? %>
+      <div class="task__remove pull-right">
+        <%= link_to "", "#",
+          class: "btn btn-xs btn-danger glyphicon glyphicon-trash remove__icon", %>
+      </div>
+    <% end %>
+    <div class="clearfix"></div>
+  </div>
+</div>

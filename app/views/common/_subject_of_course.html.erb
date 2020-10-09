@@ -7,7 +7,7 @@
     <div class="col-md-9">
       <div class="content-subject">
         <h4>
-          <%= link_to subject.name, "#" %>
+          <%= link_to subject.name, subject %>
           <span class="subject-time-training">
             (<%= subject.time_training %> <%= t "form.hours" %>)
           </span>
@@ -32,7 +32,7 @@
         <div class="dropdown">
           <p class="setting dropdown-toggle" data-toggle="dropdown"></p>
           <ul class="dropdown-menu">
-            <li><%= link_to t("form.view"), "#" %></li>
+            <li><%= link_to t("form.view"), subject %></li>
             <li><%= link_to t("form.remove"),
               delete_subject_course_path(id: @course.id, subject_id: subject.id),
               method: :get, data: {confirm: t("sure?")}, remote: true %></li>

@@ -58,8 +58,19 @@ courses.each do |course|
   users.each do |user|
     UserCourse.create! user_id: user.id,
                        course_id: course.id,
-                       status: "active",
+                       finished: 0,
                        date_join: Time.zone.now,
-                       finished: 0
+                       status: "active"
+  end
+end
+
+subjects = Subject.all
+subjects.each do |subject|
+  rand(5..10).times do
+    name = Faker::Lorem.word
+    description = Faker::Lorem.paragraph sentence_count: 3, supplemental: true
+    Task.create! name: name,
+                 description: description,
+                 subject_id: subject.id
   end
 end

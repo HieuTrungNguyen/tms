@@ -6,18 +6,20 @@
     </div>
     <div class="subject-item__content">
       <div class="content-name">
-        <h4 class="content-name__name"><%= subject.name %></h4>
+        <h4 class="content-name__name"><%= link_to subject.name, subject %></h4>
         <p class="content-name__joined-date">
           <%= l subject.created_at, format: "%d/%m/%Y" %>
         </p>
       </div>
-      <p class="content-descript">
-        <span class="content-descript__tag"><%= t "form.description" %>: </span>
+      <div class="content-descript">
+        <span class="content-descript__tag">
+          <span class="content-descript__title"><%= t "form.description" %></span>:
+        </span>
         <%= subject.description %>
-      </p>
+      </div>
       <div>
-        <%= link_to t("courses.show.details"), "#",
-          class: "btn btn-info subject-detail-link" %>
+        <%= link_to t("courses.show.details"), subject,
+          class: "btn btn-info btn__subject-detail" %>
       </div>
     </div>
   </div>

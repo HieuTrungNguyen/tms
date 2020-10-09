@@ -2,15 +2,19 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#subjects">
       <%= t ".subjects" %>
-      <span class="badge nav__course-subjects-count js-nav__course-subjects-count">
-        <%= @course.subjects.count %>
-      </span>
+      <% if logged_in? %>
+        <span class="badge nav__course-subjects-count js-nav__course-subjects-count">
+          <%= @course.subjects.count %>
+        </span>
+        <% end %>
     </a></li>
     <li><a data-toggle="tab" href="#member">
       <%= t ".member" %>
-      <span class="badge nav__course-users-count js-nav__course-users-count">
-        <%= @course.users.count %>
-      </span>
+      <% if logged_in? %>
+        <span class="badge nav__course-users-count js-nav__course-users-count">
+          <%= @course.users.count %>
+        </span>
+      <% end %>
     </a></li>
     <li><a data-toggle="tab" href="#tasks">
       <%= t ".tasks" %>
