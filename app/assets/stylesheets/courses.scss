@@ -1,4 +1,9 @@
 /* Index Courses */
+.add-member__btn {
+  margin-left  : 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .item {
   height       : auto;
   margin-bottom: 3rem;
@@ -138,12 +143,12 @@ p.setting {
       border       : 1px solid #eaeaea;
       margin-bottom: 5rem;
       text-align   : center;
-      p {
+      .joined-member {
         padding      : 2.5rem;
         font-size    : 2rem;
         color        : #19191a;
         border-bottom: 1px solid #eaeaea;
-        span.joined_member {
+        .course__users-count {
           font-size  : 4rem;
           font-weight: 600;
           margin     : 1rem 0 0;
@@ -152,7 +157,7 @@ p.setting {
           font-family: Arial;
         }
       }
-      dl.timeTraining, dl.prerequisites {
+      dl.time-training, dl.prerequisites {
         margin : 0;
         padding: 2.5rem;
         dt {
@@ -169,7 +174,7 @@ p.setting {
           font-family: Arial;
         }
       }
-      dl.timeTraining {
+      dl.time-training {
         border-bottom: 1px solid #eaeaea;
       }
     }
@@ -184,6 +189,7 @@ div.detail-course {
   }
   div.tab-content {
     div#subjects {
+      /* Subject of Course*/
       .item-subject {
         background-color: #effafb;
         box-shadow      : 1px 1px 1px #adadad;
@@ -241,11 +247,15 @@ a.link-add-member, a.link-add-subject {
   padding         : 1.5rem;
 }
 .user-card {
-  min-height   : 10rem !important;
+  min-height   : 1px !important;
   box-shadow   : 1px 1px 1px #adadad;
   border       : 1px solid #D9D9D9;
   border-radius: 5px;
   transition   : 0.5s;
+  width        : 45%;
+  margin-left  : 2.5%;
+  margin-right : 2.5%;
+  margin-bottom: 1.2rem;
   &:hover {
     box-shadow: 3px 5px 3px #adadad;
   }
@@ -254,13 +264,16 @@ a.link-add-member, a.link-add-subject {
     div.checkbox-user-card {
       margin-top: 0;
     }
-    div.media-container {
+    div.media__content {
+      min-height   : 13rem !important;
+      margin-left  : 0;
+      margin-bottom: 5px;
+      border-bottom: 1px solid rgba(204, 204, 204, 0.7);
       .media-heading img.media-object-user {
         height: 6rem;
         width : 6rem;
       }
       .media-body {
-        padding-left: 1rem;
         h4.media-username {
           font-size: 1.6rem;
           text-transform: capitalize;
@@ -274,10 +287,10 @@ a.link-add-member, a.link-add-subject {
 }
 
 /* Add Member, Subject To Course*/
-.media-add-member, .media-add-subject {
+.media-add-member, .media-add-subject, .media-member {
   margin-left: 0;
 }
-.add-member-card, .add-subject-card {
+.add-member-card, .add-subject-card, .member-card {
   height       : 15rem;
   overflow     : hidden;
   box-shadow   : 1px 1px 1px #adadad;
@@ -288,26 +301,29 @@ a.link-add-member, a.link-add-subject {
     box-shadow: 3px 5px 3px #adadad;
   }
 }
-div.checkbox-user-card, div.checkbox-subject-card {
+.checkbox-user-card, .checkbox-subject-card {
   input[type="checkbox"] {
     position: absolute;
     top     : 4.5rem;
   }
 }
-div.media-container {
+.media-container {
   margin-left: 3rem;
   padding    : 1rem;
-  h4.media-heading {
+  .media-heading {
     color         : #397c5f;
     font-style    : italic;
     text-transform: capitalize;
-    margin-bottom : 1rem;
+    margin-bottom : 1.5rem;
   }
-  p.media-text {
+  .media-duration {
+    margin-bottom: 0;
+  }
+  .media-text {
     text-transform: capitalize;
-    span.italic-text {
-      font-style : italic;
-      font-weight: 600;
-    }
   }
+}
+.italic-text {
+  font-style : italic;
+  font-weight: 600;
 }

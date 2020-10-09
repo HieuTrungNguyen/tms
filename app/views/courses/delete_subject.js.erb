@@ -1,0 +1,4 @@
+alert("That subject is deleted successfully!");
+$('.js-course__subjects-count').html('<%= @subjects.size %>');
+$('.js-course__time-training').html('<%= @course.time_training %>');
+$('.subject-<%= @subject_id %>').remove();

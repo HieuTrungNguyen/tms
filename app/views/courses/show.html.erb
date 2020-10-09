@@ -38,15 +38,22 @@
   </div>
   <div class="col-md-4 more-inform">
     <aside class="inform-sidebar">
-      <p>
+      <p class="joined-member">
         <%= t ".join" %>
-        <span class="joined_member course-users-count"><%= @course.users.count %></span>
+        <span class="course__users-count js-course__users-count">
+          <%= @course.users.count %>
+        </span>
         <%= t ".joined_people" %>
       </p>
       <div>
-        <dl class="timeTraining">
+        <dl class="time-training">
           <dt><%= t ".time_complete" %></dt>
-          <dd><%= @course.time_training %> <%= t "form.hours" %></dd>
+          <dd>
+            <span class="course__time-training js-course__time-training">
+              <%= @course.time_training %>
+            </span>
+            <%= t "form.hours" %>
+          </dd>
         </dl>
         <dl class="prerequisites">
           <dt><%= t ".prerequisites" %></dt>

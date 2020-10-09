@@ -31,7 +31,8 @@ en:
     show_more: "Show more..."
     continue: "Continue"
     learn: "Learn"
-
+    delete: "Delete"
+    
   nav:
     courses: "Courses"
     message: "Message"
@@ -47,6 +48,8 @@ en:
       add_fail: "Add new course failed. Try again!"
       update_course: "%{name}'s Course is updated!"
       delete_course: "%{name}'s Course is deleted!"
+      delete_subject_fail: "You don't delete this at now. Try again!"
+      delete_member_fail: "You don't delete this trainee at now. Try again!"
     users:
       created_success: "Create account successfully!"
       created_fail: "Sign up failed. Try again!"
@@ -64,12 +67,13 @@ en:
       subjects: "Subjects"
       member: "Member"
       tasks: "Tasks"
-      add_member: "Add member"
-      add_subject: "Add Subject"
+      add: "Add"
     modal_add_member:
       title_add_member: "Add Member In Course"
     modal_add_subject:
       title_add_subject: "Add Subject In Course"
+    modal_select_users:
+      selected-users-title: "Select Users Will Be Deleted"
     index:
       courses_title: "All Courses"
       btn_addCourse: "Add New Couse"

@@ -1,7 +1,8 @@
-<div class="item-subject">
+<div class="item-subject subject-<%= subject.id %>">
   <div class="row">
     <div class="col-md-2">
-      <%= image_tag "default_course_cover.png", class: "subject_cover" %>
+      <%= image_tag set_object_img(subject.cover.url, Settings.subject.default_cover),
+        class: "subject_cover" %>
     </div>
     <div class="col-md-9">
       <div class="content-subject">
@@ -15,14 +16,14 @@
           <span class="italic-text"><%= t "form.description" %>:</span>
           <%= subject.description %>
         </p>
+        <p class="subject-content hidden">
+          <span class="italic-text"><%= t "form.content" %>:</span>
+          <%= subject.content %>
+        </p>
         <p class="js-show-content">
           <button type="button" class="btn btn-sm btn-info js-show-content__link">
             <%= t ".show_more" %>
           </button>
-        </p>
-        <p class="subject-content hidden">
-          <span class="italic-text"><%= t "form.content" %>:</span>
-          <%= subject.content %>
         </p>
       </div>
     </div>
@@ -32,7 +33,9 @@
           <p class="setting dropdown-toggle" data-toggle="dropdown"></p>
           <ul class="dropdown-menu">
             <li><%= link_to t("form.view"), subject %></li>
-            <li><%= link_to t("form.remove"), "#" %></li>
+            <li><%= link_to t("form.remove"),
+              delete_subject_course_path(id: @course.id, subject_id: subject.id),
+              method: :get, data: {confirm: t("sure?")}, remote: true %></li>
           </ul>
         </div>
       <% end %>
