@@ -1,0 +1,5 @@
+alert("New task is added successfully!");
+$('#modal__add-task').modal("toggle");
+$('.badge__tasks-count').html('<%= @tasks.size %>');
+$('.subject__tasks-list').html('<%= j(render partial: "common/task_of_subject",
+  collection: @tasks, as: :task) %>');

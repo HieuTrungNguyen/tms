@@ -28,14 +28,31 @@
   <div class="subject__tasks pull-right">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        Tasks <span class="badge"><%= @subject.tasks.count %></span>
+        <div class="pull-left">
+          Tasks <span class="badge badge__tasks-count"><%= @subject.tasks.count %></span>
+        </div>
+        <div class="pull-right"><a href="" data-toggle="modal" data-target="#modal__add-task">
+          <%= image_tag "add_task", class: "panel__add-task" %>
+        </a></div>
+        <div class="clearfix"></div>
       </div>
       <div class="panel-body">
-        <div class="tasks-list list-group">
+        <div class="list-group subject__tasks-list">
           <%= render partial: "common/task_of_subject", collection: @tasks, as: :task %>
         </div>
       </div>
     </div>
   </div>
   <div class="clearfix"></div>
+</div>
+<div class="modal fade" id="modal__add-task">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Task</h4>
+      </div>
+      <%= render "tasks/task_form" %>
+    </div>
+  </div>
 </div>
